@@ -1,21 +1,28 @@
-/* App.css */
-
+/* App.css
+2a9d8f
+fefee3 */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #cad2c5 ;
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #1b4332 ;
+  height: 35px;
   color: white;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+.border:hover{
+  border-radius: 5px;
+  background-color: #d8e2dc;
+  color: #081c15;
+}
 .tabs a {
-  color: white;
+  color: #dad7cd;
   text-decoration: none;
   margin-right: 15px;
 }
@@ -28,14 +35,19 @@ body {
 .search-login input[type="text"] {
   padding: 5px;
   margin-right: 15px;
+  border-radius: 8px;
 }
 
 .search-login button {
   background-color: #4CAF50;
   color: white;
   border: none;
+  border-radius: 15px;
   padding: 8px 15px;
   cursor: pointer;
+}
+.in{
+  color: #081c15;
 }
 
 .content {

@@ -8,16 +8,16 @@ function App() {
     <div className="App">
       <header className="navbar">
       <div className="search-login">
-          <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search" className='in' />
           
         </div>
         <div className="tabs">
-          <a href="#">Shri</a>
-          <a href="#">Ninad</a>
-          <a href="#">Atharva</a>
-          <a href="#">Mayur</a>
+          <a href="#" className='border act'>Shri</a>
+          <a href="#" className='border act'>Ninad</a>
+          <a href="#" className='border act'>Atharva</a>
+          <a href="#" className='border act'>Mayur</a>
         
-        <button>Login</button>
+        <button className='in'>Login</button>
         </div>
         
       </header>
