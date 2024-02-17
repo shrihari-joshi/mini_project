@@ -13,7 +13,7 @@ const Home = () => {
                 </nav>
                 {/* <h1>Welcome to Urban-Utsav</h1> */}
             </header>
-        </main>
+        </div>
     );
 };
 
