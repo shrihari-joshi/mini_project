@@ -9,11 +9,12 @@ import Seeds from './Seeds';
 import Plant_Nutrition from './Plant_Nutrition';
 import Weather_Forecast from './Weather_Forecast';
 import Kisan_Care from './Kisan_Care';
+import './navbar.css'
 
 function App() {
     return (
         <main>
-            <Routes>
+            <Routes >
                 <Route path="/" element={<Home />} /> {/* Define a home route */}
                 <Route path="/login" element={<Login />} /> {/* Define a route for Login */}
                 <Route path="/register" element={<Register />} /> {/* Define a route for Register */}

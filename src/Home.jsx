@@ -4,12 +4,13 @@ import Navbar from './Navbar';
 
 const Home = () => {
     return (
-        <div className="content">
+        <div>
             <header>
-                <h1>Home</h1>
-                <nav>
-                    <Navbar />
+                
+                <nav className='body'>
+                    <Navbar/>
                 </nav>
+                {/* <h1>Welcome to Urban-Utsav</h1> */}
             </header>
         </div>
     );
