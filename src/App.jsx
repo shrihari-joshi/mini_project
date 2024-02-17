@@ -16,6 +16,8 @@ function App() {
     const [users, setUsers] = useState(localStorage.getItem('users') || [])
     return (
         <main>
+            
+                
             <Routes >
                 <Route path="/" element={<Home />} /> {/* Define a home route */}
                 <Route path="/signup" element={<SignUp
@@ -36,6 +38,7 @@ function App() {
                 <Route path="/weathe-forecast" element={<Weather_Forecast />} /> {/* Define a route for Weather Forecast */}
                 <Route path="/kisan-care" element={<Kisan_Care />} /> {/* Define a route for Kisan Care */}
             </Routes>
+            
         </main>
     );
 }

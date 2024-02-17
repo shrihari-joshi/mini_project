@@ -1,8 +1,10 @@
+import Navbar from './Navbar'
+
 const Seeds = () => {
     return (
-        <div>
-            <h1>Seeds</h1>
-        </div>
+        <nav className='body home'>
+                    <Navbar/>
+        </nav>
     )
 }
 

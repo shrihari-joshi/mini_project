@@ -1,22 +1,23 @@
-import React from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
-
+import React, { useState } from 'react';
+import { Route, Routes, Link, useLocation } from 'react-router-dom'
+import './navbar.css';
 
 const Navbar = () => {
+    
     return (
-        <nav>
-            <ul>
-                <li><Link to= '/'>Home</Link></li>
-                <li><Link to='/seeds'>Seeds</Link></li>
-                <li><Link to='/crop-protection'>Crop Protection</Link></li>
-                <li><Link to='/plant-nutrition'>Plant Nutrition</Link></li>
-                <li><Link to='/farming-tools'>Farming Tools</Link></li>
-                <li><Link to='/weather-forecast'>Weather Forecast</Link></li>
-                <li><Link to='/kisan-care'>Kisan Care</Link></li>
+        <div className="left-navbar">
+            <ul className='navbar'>
+                <li className='border'><Link to= '/'>Home</Link></li>
+                <li className='border'><Link to='/seeds'>Seeds</Link></li>
+                <li className='border'><Link to='/crop-protection'>Crop Protection</Link></li>
+                <li className='border'><Link to='/plant-nutrition'>Plant Nutrition</Link></li>
+                <li className='border'><Link to='/farming-tools'>Farming Tools</Link></li>
+                <li className='border'><Link to='/weather-forecast'>Weather Forecast</Link></li>
+                <li className='border'><Link to='/kisan-care'>Kisan Care</Link></li>
                 <li><Link to="/signup">Sign Up</Link></li>
             </ul>
         
-        </nav>
+        </div>
     )
 }
 
