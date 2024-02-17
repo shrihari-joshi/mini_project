@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Home = () => {
+
     return (
         <div>
             <header>
@@ -12,7 +13,7 @@ const Home = () => {
                 </nav>
                 {/* <h1>Welcome to Urban-Utsav</h1> */}
             </header>
-        </div>
+        </main>
     );
 };
 
