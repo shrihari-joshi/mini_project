@@ -10,6 +10,7 @@ import Seeds from './Seeds';
 import Plant_Nutrition from './Plant_Nutrition';
 import Weather_Forecast from './Weather_Forecast';
 import Kisan_Care from './Kisan_Care';
+import ContactUs from './ContactUs';
 import './navbar.css'
 
 function App() {
@@ -32,11 +33,11 @@ function App() {
                         users={users}
                         setUsers={setUsers}
                     />} />
-                <Route path="/seeds" element={<Seeds/>} /> {/* Define a route for Seeds */}
-                <Route path="/crop-protection" element={<Crop_Protection />} /> {/* Define a route for Crop Protection */}
-                <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> {/* Define a route for Plant Nutrition */}
-                <Route path="/weathe-forecast" element={<Weather_Forecast />} /> {/* Define a route for Weather Forecast */}
-                <Route path="/kisan-care" element={<Kisan_Care />} /> {/* Define a route for Kisan Care */}
+                <Route path="/seeds" element={<Seeds/>} />
+                <Route path="/crop-protection" element={<Crop_Protection />} /> 
+                <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> 
+                <Route path="/weathe-forecast" element={<Weather_Forecast />} /> 
+                <Route path="/kisan-care" element={<Kisan_Care />} /> 
             </Routes>
             
         </main>

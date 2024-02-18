@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li className='border'><Link to='/farming-tools'>Farming Tools</Link></li>
                 <li className='border'><Link to='/weather-forecast'>Weather Forecast</Link></li>
                 <li className='border'><Link to='/kisan-care'>Kisan Care</Link></li>
-                <li><Link to="/signup">Sign Up</Link></li>
+                <li><Link to="/ContactUs">About Us</Link></li>
             </ul>
         
         </div>
