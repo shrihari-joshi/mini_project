@@ -8,7 +8,6 @@ const Seeds = () => {
     useEffect(() => {
         fetchSeeds();
     }, [seeds]);
-
     const fetchSeeds = async () => {
         try {
             const response = await axios.get('http://localhost:3500/seeds');

@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+import './Register.css'
+
+
 const Register = ({ users, setUsers}) => {
     
     const [username, setUsername] = useState([])
@@ -55,8 +58,9 @@ const Register = ({ users, setUsers}) => {
     }
 
     return (
-        <form >
-            <label htmlFor="username">username:</label>
+        <div className='full'>
+        <form className='page'>
+            <label htmlFor="username">Username:</label>
             <input  
                 required
                 type='text'
@@ -80,7 +84,7 @@ const Register = ({ users, setUsers}) => {
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
             />
-            <label htmlFor="retype-pass">Retype Password: </label>
+            <label htmlFor="retype-pass">Confirm Password: </label>
             <input
                 required
                 type='password' 
@@ -88,8 +92,9 @@ const Register = ({ users, setUsers}) => {
                 value={retypePass}
                 onChange={(e) => setRetypePass(e.target.value)}
             />
-            <button type='submit' onClick={handleSubmit} >submit</button>
+            <button type='submit' onClick={handleSubmit} >Submit</button>
         </form>
+        </div>
     )
 }
 
