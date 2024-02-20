@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Navigation, useNavigate } from 'react-router-dom'
+import './Register.css'
 
 const Login = ({users}) => {
     const [currentUser, setCurrentUser] = useState('');
@@ -10,7 +11,7 @@ const Login = ({users}) => {
     }
 
     return (
-        <div>
+        <div className="login_page">
             {/* <form >
                 <label htmlFor="username">username:</label>
                 <input  
@@ -28,7 +29,7 @@ const Login = ({users}) => {
                 />
                 <button type='submit' onClick={logIn} >submit</button>
             </form> */}
-            <button type='submit' onClick={logIn}>submit</button>
+            <button type='submit' onClick={logIn}>Submit</button>
         </div>
     )
 

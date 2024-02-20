@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
+import './Register.css'
 
 const Register = ({ users, setUsers}) => {
     
@@ -45,8 +46,9 @@ const Register = ({ users, setUsers}) => {
     }
 
     return (
-        <form >
-            <label htmlFor="username">username:</label>
+        <div className='full'>
+        <form className='page'>
+            <label htmlFor="username">Username:</label>
             <input  
                 type='text'
                 id='username'
@@ -67,15 +69,16 @@ const Register = ({ users, setUsers}) => {
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
             />
-            <label htmlFor="retype-pass">Retype Password: </label>
+            <label htmlFor="retype-pass">Confirm Password: </label>
             <input
                 type='text' 
                 id = 'retype-pass'
                 value={retypePass}
                 onChange={(e) => setRetypePass(e.target.value)}
             />
-            <button type='submit' onClick={handleSubmit} >submit</button>
+            <button type='submit' onClick={handleSubmit} >Submit</button>
         </form>
+        </div>
     )
 }
 
