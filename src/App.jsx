@@ -14,10 +14,12 @@ import './navbar.css'
 
 function App() {
     const [users, setUsers] = useState(localStorage.getItem('users') || [])
+    const items = ['item1', 'item2', 'item3'];
+
     return (
         <main>
             
-                
+            
             <Routes >
                 <Route path="/" element={<Home />} /> {/* Define a home route */}
                 <Route path="/signup" element={<SignUp
@@ -32,7 +34,9 @@ function App() {
                         users={users}
                         setUsers={setUsers}
                     />} />
-                <Route path="/seeds" element={<Seeds/>} /> {/* Define a route for Seeds */}
+                <Route path="/seeds" element={<Seeds
+                    items = {items}
+                />} /> {/* Define a route for Seeds */}
                 <Route path="/crop-protection" element={<Crop_Protection />} /> {/* Define a route for Crop Protection */}
                 <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> {/* Define a route for Plant Nutrition */}
                 <Route path="/weathe-forecast" element={<Weather_Forecast />} /> {/* Define a route for Weather Forecast */}

@@ -1,17 +1,29 @@
 import React from 'react'
 import { useState } from 'react'
 import { Navigation, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Login = ({users}) => {
-    const [currentUser, setCurrentUser] = useState('');
+    const [username, setUsername] = useState('')
+    const [pass, setPass] = useState('');
     const navigate = useNavigate();
     const logIn = () => {
+        const user = {
+            username : username,
+            password : pass
+        }
+        axios.post('http://localhost:3500/auth', user).then((result) => {
+            localStorage.setItem('currentUser', user)
+            console.log(`${user} loggedIn`);
+        }).catch((err) => {
+            console.log(err);
+        });
         navigate('/')
     }
 
     return (
         <div>
-            {/* <form >
+            <form >
                 <label htmlFor="username">username:</label>
                 <input  
                     type='text'
@@ -27,7 +39,7 @@ const Login = ({users}) => {
                     onChange={(e) => setPass(e.target.value)}
                 />
                 <button type='submit' onClick={logIn} >submit</button>
-            </form> */}
+            </form>
             <button type='submit' onClick={logIn}>submit</button>
         </div>
     )
