@@ -14,8 +14,6 @@ import ContactUs from './ContactUs';
 import './navbar.css'
 
 function App() {
-    const [users, setUsers] = useState(localStorage.getItem('users') || [])
-    const items = ['item1', 'item2', 'item3'];
 
     return (
         <main>
@@ -23,18 +21,10 @@ function App() {
             
             <Routes >
                 <Route path="/" element={<Home />} /> {/* Define a home route */}
-                <Route path="/signup" element={<SignUp
-                    users={users}
-                    setUsers={setUsers}
-                />}/>
-                    <Route path="/login" element={<Login
-                        users={users}
-                    />} />
+                <Route path="/signup" element={<SignUp/>}/>
+                    <Route path="/login" element={<Login/>} />
                     {/* Define a route for Login */}
-                    <Route path="/register" element={<Register
-                        users={users}
-                        setUsers={setUsers}
-                    />} />
+                    <Route path="/register" element={<Register/>} />
                 <Route path="/seeds" element={<Seeds/>} />
                 <Route path="/crop-protection" element={<Crop_Protection />} /> 
                 <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> 

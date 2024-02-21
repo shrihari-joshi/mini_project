@@ -4,21 +4,26 @@ import axios from 'axios';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
-    
+    const [cart, setCart] = useState([])
     useEffect(() => {
         fetchSeeds();
     }, [seeds]);
+
     const fetchSeeds = async () => {
         try {
             const response = await axios.get('http://localhost:3500/seeds');
             console.log('Data fetched');
             setSeeds(response.data);
         } catch (error) {
-            console.error('Error fetching seeds:', error);
+            alert(error)
         }
     };
 
-    const handleBuySeed = async (id) => {
+    const addToCart = async () => {
+        const updatedCart = [...cart, seeds]
+        setCart(updatedCart)
+    }
+    const buySeeds = async (id) => {
         try {
             console.log('Buying seed with ID:', id);
         } catch (error) {
@@ -37,7 +42,9 @@ const Seeds = () => {
                             <h3>{seed.name}</h3>
                             <p>Type: {seed.type}</p>
                             <p>Date Added: {new Date(seed.date).toLocaleDateString()}</p>
-                            <button onClick={() => handleBuySeed(seed.id)}>Buy</button>
+                            {/* you have to put icon for add to cart */}
+                            <button onClick={addToCart}>Add To Cart</button> 
+                            <button onClick={() => buySeeds(seed.id)}>Buy</button>
                         </div>
                     </li>
                 ))}

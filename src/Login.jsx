@@ -1,63 +1,55 @@
-import React from 'react'
-import { useState } from 'react'
-import { Navigation, useNavigate } from 'react-router-dom'
-<<<<<<< HEAD
-import axios from 'axios'
-=======
-import './Register.css'
->>>>>>> fa0fd1ff14bfbdc535e2ffaaa2a34ab1f81bf853
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const Login = ({users}) => {
-    const [username, setUsername] = useState('')
+import './Register.css';
+
+const Login = () => {
+    const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
     const navigate = useNavigate();
-    const logIn = () => {
-        const user = {
-            username : username,
-            password : pass
+
+    const logIn = async (e) => {
+
+        e.preventDefault();
+
+        try{
+            const response = await axios.post('http://localhost:3500/auth', {
+                username: username,
+                password: pass
+            });
+
+            localStorage.setItem('currentUser', JSON.stringify(response.data));
+            console.log(`${username} logged In`);
+            navigate('/');
+        } catch (error) {
+            console.log(error);
         }
-        axios.post('http://localhost:3500/auth', user).then((result) => {
-            localStorage.setItem('currentUser', user)
-            console.log(`${user} loggedIn`);
-        }).catch((err) => {
-            console.log(err);
-        });
-        navigate('/')
-    }
+    };
 
     return (
-<<<<<<< HEAD
         <div>
-            <form >
-=======
-        <div className="login_page">
-            {/* <form >
->>>>>>> fa0fd1ff14bfbdc535e2ffaaa2a34ab1f81bf853
-                <label htmlFor="username">username:</label>
-                <input  
-                    type='text'
-                    id='username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="pass">Password: </label>
-                <input
-                    type='text' 
-                    id = 'pass'
-                    value={pass}
-                    onChange={(e) => setPass(e.target.value)}
-                />
-                <button type='submit' onClick={logIn} >submit</button>
-<<<<<<< HEAD
-            </form>
-            <button type='submit' onClick={logIn}>submit</button>
-=======
-            </form> */}
-            <button type='submit' onClick={logIn}>Submit</button>
->>>>>>> fa0fd1ff14bfbdc535e2ffaaa2a34ab1f81bf853
+            <div className="login_page">
+                <form onSubmit={logIn}>
+                    <label htmlFor="username">Username:</label>
+                    <input  
+                        type='text'
+                        id='username'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <label htmlFor="pass">Password: </label>
+                    <input
+                        type='password' 
+                        id='pass'
+                        value={pass}
+                        onChange={(e) => setPass(e.target.value)}
+                    />
+                    <button type='submit' >Submit</button>
+                </form>
+            </div>
         </div>
-    )
+    );
+};
 
-}
-
-export default Login
+export default Login;
