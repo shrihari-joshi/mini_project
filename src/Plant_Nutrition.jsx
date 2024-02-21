@@ -1,9 +1,10 @@
-import React from 'react'
+
+import Home from './Home'
 
 const Plant_Nutrition = () => {
     return (
         <div>
-            <h1>Plant Nutrition</h1>
+            <Home/> 
         </div>
     )
 }

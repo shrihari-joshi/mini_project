@@ -10,8 +10,12 @@ import Seeds from './Seeds';
 import Plant_Nutrition from './Plant_Nutrition';
 import Weather_Forecast from './Weather_Forecast';
 import Kisan_Care from './Kisan_Care';
-import ContactUs from './ContactUs';
+import About from './About';
 import './navbar.css'
+import Farming_Tools from './Farming_Tools';
+import Cart from './Cart';
+import Wishlist from './Wishlist'
+import Settings from './Settings'
 
 function App() {
     const [users, setUsers] = useState(localStorage.getItem('users') || [])
@@ -36,8 +40,13 @@ function App() {
                 <Route path="/seeds" element={<Seeds/>} />
                 <Route path="/crop-protection" element={<Crop_Protection />} /> 
                 <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> 
-                <Route path="/weathe-forecast" element={<Weather_Forecast />} /> 
+                <Route path="/farming-tools" element={<Farming_Tools />} /> 
+                <Route path="/weather-forecast" element={<Weather_Forecast />} /> 
                 <Route path="/kisan-care" element={<Kisan_Care />} /> 
+                <Route path="/cart" element={<Cart />} /> 
+                <Route path="/wishlist" element={<Wishlist />} /> 
+                <Route path="/settings" element={<Settings />} /> 
+                <Route path="/About" element={<About />} /> 
             </Routes>
             
         </main>

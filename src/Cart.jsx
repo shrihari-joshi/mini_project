@@ -1,7 +1,8 @@
+import Home from "./Home"
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <div><Home/> </div>
   )
 }
 

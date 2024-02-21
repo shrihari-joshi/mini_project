@@ -1,12 +1,11 @@
 import Home from "./Home"
 
-
-const Settings = () => {
+const About = () => {
   return (
     <div>
-      <Home/> 
+        <Home/>
     </div>
   )
 }
 
-export default Settings
+export default About

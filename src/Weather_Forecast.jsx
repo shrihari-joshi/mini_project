@@ -1,9 +1,10 @@
-import React from 'react'
+
+import Home from './Home'
 
 const Weather_Forecast = () => {
     return (
         <div>
-            <h1>Weather forecast</h1>
+            <Home/> 
         </div>
     )
 }
