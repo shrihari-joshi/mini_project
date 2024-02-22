@@ -1,12 +1,19 @@
 *{
-padding: 0;
-margin: 0;
+padding: 0px;
+margin: 0px;
 box-sizing: border-box;
 }
 .body{
 color: #283618;
 height: 100%;
 display: flex;
+justify-content: flex-start;
+}
+.head{
+  width: 20vw;
+  white-space: nowrap;
+  margin-right: 85%;
+  margin-top: 0px;
 }
 .h1{
   text-align: left;
@@ -17,18 +24,20 @@ display: flex;
 .title{
   text-align: left;
   font-size: 50px;
-  margin-top: 10px;
+  margin-top: -10px;
   margin-left: 20px;
   margin-bottom: 0px;
 }
 .container{
   display: flex;
   background-color: #eff6e0;
-  height: 100vh;
+  height: 13vh;
+  /* width: 100vw;  */
+  margin: 0px;
   
 }
 .left{
-  width: 17%;
+  width: 17vw;
 }
 .right{
   flex: 1;
@@ -36,7 +45,7 @@ display: flex;
 .left-navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0px;
   height: 100%;
   width: 17%;
   background-color: #283618;
@@ -113,19 +122,18 @@ display: flex;
 
 
 .search-bar {
-  position: fixed;
-  top: 15px;
-  left: 69%; 
+  margin-left: 17vw;
+  margin-right: 0px;
+  /* top: 15px;  */
   width: 31.5%;
   display: flex;
-  align-items: center; 
-  z-index: 2;
+  align-items:center; 
 }
 .search{
   color: #283618;
 }
 .search-bar input {
-  width: 80%; 
+  width: 300px; 
   top: 35px;
   padding: 5px;
   margin: 10px; 
@@ -163,4 +171,15 @@ display: flex;
   border-radius: 12px;
 }
 
+@media screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .head {
+    width: 90%;
+    margin-right: 2%;
+  }
+
+  .search-bar {
+    width: 70%;
+  }
+}
 
