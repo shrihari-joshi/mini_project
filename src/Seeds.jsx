@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Home from './Home';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
@@ -33,8 +34,8 @@ const Seeds = () => {
 
     return (
         <div>
-            <h2>Available Seeds</h2>
-            {/* < Navbar /> */}
+            
+            < Home />
             <ul>
                 {seeds.map(seed => (
                     <li key={seed.id}>

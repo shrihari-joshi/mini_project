@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import './navbar.css';
+import './home.css';
 
 import { FaCartPlus } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
@@ -10,20 +10,12 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { FaPowerOff } from "react-icons/fa6";
 import Cart from './Cart';
 
+
 const Home = () => {
-    const [isSlidingBarOpen, setSlidingBarOpen] = useState(false);
-    const slidingBarRef = useRef(null);
-    const toggleButtonRef = useRef(null);
-
-    const toggleSlidingBar = () => {
-        setSlidingBarOpen(true);
-    };
-
-    const closeSlidingBar = () => {
-        setSlidingBarOpen(false);
-    };
+   
 
     return (
+
         <div className='container'>
             <div className={`left ${isSlidingBarOpen ? 'sliding-bar-open' : ''}`}>
                 <Navbar />
@@ -69,6 +61,7 @@ const Home = () => {
                 <div className="horizontal-line"></div>
             </div>
         </div>
+
     );
 };
 

@@ -1,10 +1,11 @@
-import React from 'react'
+
+import Home from './Home';
 
 const Farming_Tools = () => {
     return (
-        <div>
-            <h1>Farming Tools</h1>
-        </div>
+        <nav>
+            <Home/> 
+        </nav>
     )
 }
 

@@ -1,12 +1,19 @@
 *{
-padding: 0;
-margin: 0;
+padding: 0px;
+margin: 0px;
 box-sizing: border-box;
 }
 .body{
 color: #283618;
 height: 100%;
 display: flex;
+justify-content: flex-start;
+}
+.head{
+  width: 20vw;
+  white-space: nowrap;
+  margin-right: 85%;
+  margin-top: 0px;
 }
 .h1{
   text-align: left;
@@ -17,18 +24,20 @@ display: flex;
 .title{
   text-align: left;
   font-size: 50px;
-  margin-top: 10px;
+  margin-top: -10px;
   margin-left: 20px;
   margin-bottom: 0px;
 }
 .container{
   display: flex;
   background-color: #eff6e0;
-  height: 100vh;
+  height: 13vh;
+  /* width: 100vw;  */
+  margin: 0px;
   
 }
 .left{
-  width: 17%;
+  width: 17vw;
 }
 .right{
   flex: 1;
@@ -36,7 +45,7 @@ display: flex;
 .left-navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0px;
   height: 100%;
   width: 17%;
   background-color: #283618;
@@ -73,6 +82,7 @@ display: flex;
   padding: 10px 1px;
   width:100%;
   justify-content: center;
+  
 
   
 }
@@ -85,56 +95,11 @@ display: flex;
   font-weight: 800;
   font-size: 23px;
   width:100%;
-}
-
-/*Horizontal Navbar*/
-
-.toggle-button {
-  position: fixed;
-  top: 20px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 35px;
-  background-color: #eff6e0 ;
-  z-index: 2;
-  color: #283618;
-  transition: transform 0.6s ease;
-}
-
-.toggle-button.hidden {
-  transform: translateX(180%); 
-}
-
-.sliding-bar-trigger {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 2;
-  color: #283618;
-}
-
-.sliding-bar {
-  position: fixed;
-  top: 4%;
-  right: 0.7%;
-  width: 3%;
-  font-size: 1.3rem;
-  height: 0;
-  display: flex;
-  flex-direction: column;
-  transition: height 0.3s ease;
-  overflow:hidden;
-  color: #fefae0;
-  padding-left: 2px;
   
 }
 
-.sliding-bar.open {
-  height: 100%;
-  padding-left: 1px;
-}
+
+/*Horizontal Navbar*/
 
 
 .tab{
@@ -151,24 +116,27 @@ display: flex;
 }
 
 .logo:hover {
-  transform: rotate(360deg);
+  /* transform: rotate(360deg); */
+  height: 40px;
 }
 
 
 .search-bar {
-  position: fixed;
-  top: 15px;
-  left: 65%; 
+  margin-left: 17vw;
+  margin-right: 0px;
+  /* top: 15px;  */
   width: 31.5%;
   display: flex;
-  align-items: center; 
-  z-index: 2;
+  align-items:center; 
 }
-
+.search{
+  color: #283618;
+}
 .search-bar input {
-  width: 80%; 
+  width: 300px; 
+  top: 35px;
   padding: 5px;
-  margin-right: 10px; 
+  margin: 10px; 
   border: 3px solid #283618;
   border-radius: 5px;
 }
@@ -203,4 +171,15 @@ display: flex;
   border-radius: 12px;
 }
 
+@media screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .head {
+    width: 90%;
+    margin-right: 2%;
+  }
+
+  .search-bar {
+    width: 70%;
+  }
+}
 

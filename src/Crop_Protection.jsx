@@ -1,9 +1,10 @@
-import React from 'react'
+
+import Home from './Home'
 
 const Crop_Protection = () => {
   return (
     <div>
-        <h1>Crop Protection</h1>
+        <Home/> 
     </div>
   )
 }

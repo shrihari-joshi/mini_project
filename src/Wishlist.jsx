@@ -1,7 +1,10 @@
+import Home from "./Home"
 
 const Wishlist = () => {
   return (
-    <div>Wishlist</div>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
