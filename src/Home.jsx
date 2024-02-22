@@ -8,6 +8,7 @@ import { FaHeart } from "react-icons/fa";
 import { PiSignInBold } from "react-icons/pi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { FaPowerOff } from "react-icons/fa6";
+import Cart from './Cart';
 
 const Home = () => {
     const [isSlidingBarOpen, setSlidingBarOpen] = useState(false);
@@ -50,7 +51,7 @@ const Home = () => {
                 >
                     {/* Add your search bar component or input here */}
                     <input type="text" placeholder="Search" />
-                    <div className="search1" id="cart">{<FaCartPlus className='search' />}</div>
+                    <Link to={'/cart'}><div className="search1" id="cart" >{<FaCartPlus className='search' />}</div></Link>
                     <div className="search1" id="wishlist">{<FaHeart className='search' />}</div>
                 </div>
 

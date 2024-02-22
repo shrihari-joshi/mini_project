@@ -12,6 +12,7 @@ import Weather_Forecast from './Weather_Forecast';
 import Kisan_Care from './Kisan_Care';
 import ContactUs from './ContactUs';
 import './navbar.css'
+import Cart from './Cart';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/plant-nutrition" element={<Plant_Nutrition />} /> 
                 <Route path="/weather-forecast" element={<Weather_Forecast />} /> 
                 <Route path="/kisan-care" element={<Kisan_Care />} /> 
+                <Route path='/cart' element={<Cart/>}/>
             </Routes>
             
         </main>
