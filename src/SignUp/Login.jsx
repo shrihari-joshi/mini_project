@@ -45,9 +45,9 @@ const Login = () => {
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
                     />
-                    <button type='submit' >Submit</button>
+                    <button type='submit' >Log in</button>
                 </form>
-                <p><span>Can't registered ?</span><Link to='/register'>Register here</Link></p>
+                {/* <p><span>Can't registered ?</span><Link to='/register'>Register here</Link></p> */}
             </div>
         </div>
     );

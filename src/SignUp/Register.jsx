@@ -89,8 +89,8 @@ const Register = () => {
                     value={retypePass}
                     onChange={(e) => setRetypePass(e.target.value)}
                 />
-                <button type='submit' onClick={handleSubmit}>Submit</button>
-                <p><span>Login here</span><Link to='/login'>login here</Link></p>
+                <button type='submit' onClick={handleSubmit}>Register</button>
+                {/* <p><span>Login here</span><Link to='/login'>login here</Link></p> */}
             </form>
         </div>
     );
