@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './Register.css';
@@ -47,9 +47,10 @@ const Login = () => {
                     />
                     <button type='submit' >Submit</button>
                 </form>
+                <p><span>Can't registered ?</span><Link to='/register'>Register here</Link></p>
             </div>
         </div>
     );
 };
-
+  
 export default Login;

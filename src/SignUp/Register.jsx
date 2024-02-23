@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
+import Login from './Login';
 import axios from 'axios';
 
 import './Register.css';
@@ -89,6 +90,7 @@ const Register = () => {
                     onChange={(e) => setRetypePass(e.target.value)}
                 />
                 <button type='submit' onClick={handleSubmit}>Submit</button>
+                <p><span>Login here</span><Link to='/login'>login here</Link></p>
             </form>
         </div>
     );

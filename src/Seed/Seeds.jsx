@@ -1,14 +1,11 @@
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Home from './Home';
+import Home from '../Home/Home';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
     const [cart, setCart] = useState([])
-    useEffect(() => {
-        fetchSeeds();
-    }, [seeds]);
 
     const fetchSeeds = async () => {
         try {
@@ -20,6 +17,12 @@ const Seeds = () => {
         }
     };
 
+    useEffect(() => {
+        if (seeds.length === 0) {
+            fetchSeeds();
+        }
+    }, [seeds]); // Dependency on seeds state
+        
     const addToCart = async () => {
         const updatedCart = [...cart, seeds]
         setCart(updatedCart)
@@ -35,10 +38,14 @@ const Seeds = () => {
     return (
         <div>
             
-            < Home />
+            <div className='mainbase'>
+                <p className='base'>
+                    Welcome
+                </p>
+            </div>
             <ul>
-                {seeds.map(seed => (
-                    <li key={seed.id}>
+                {seeds.map((seed, index) => (
+                    <li key={index}>
                         <div>
                             <h3>{seed.name}</h3>
                             <p>Type: {seed.type}</p>
@@ -49,6 +56,7 @@ const Seeds = () => {
                         </div>
                     </li>
                 ))}
+
             </ul>
         </div>
     );
