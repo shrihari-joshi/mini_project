@@ -33,7 +33,12 @@ function App() {
             <div className='container'>
 
                 <div className='right body'>
-                    <div className='icon-img'></div>
+                    
+
+
+
+
+
                     <div
                         style={{ display: "flex" }}
                         className='search-bar'
@@ -42,6 +47,9 @@ function App() {
                             <p className='title'>Kisaan Utsav</p>
                             <p className='h1'>Seeds of Change!</p>
                         </div>
+                    
+
+                        
 
                         <div>
                             <input type="text" placeholder="Search" />
@@ -60,6 +68,10 @@ function App() {
                             <Link to='/settings'>{<IoSettingsSharp className='search' />}</Link>
                         </div>
                     </div>
+
+                        {/* <div className='icon-img'>
+                       
+                    </div> */}
 
                     <div className="horizontal-line"></div>
                 </div>
