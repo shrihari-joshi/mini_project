@@ -1,22 +1,22 @@
 import React from 'react'
 import { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
-import Home from './Home';
-import SignUp from './SignUp';
-import Login from './Login';
-import Register from './Register';
-import Crop_Protection from './Crop_Protection';
-import Seeds from './Seeds';
-import Plant_Nutrition from './Plant_Nutrition';
+import Home from './Home/Home';
+import SignUp from './SignUp/SignUp';
+import Login from './SignUp/Login';
+import Register from './SignUp/Register';
+import Crop_Protection from './Crop_Protection/Crop_Protection';
+import Seeds from './Seed/Seeds';
+import Plant_Nutrition from './Plant_Nutrition/Plant_Nutrition';
 import Weather_Forecast from './Weather_Forecast';
-import Kisan_Care from './Kisan_Care';
-import About from './About';
-import './navbar.css'
-import Farming_Tools from './Farming_Tools';
-import Cart from './Cart';
+import Kisan_Care from './Kisan_Care/Kisan_Care';
+import About from './About/About';
+import Farming_Tools from './Farming_Tools/Farming_Tools';
+import Cart from './Cart/Cart';
 import Wishlist from './Wishlist'
 import Settings from './Settings'
 import Navbar from './Navbar';
+import './navbar.css'
 
 import { FaCartPlus } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
@@ -25,22 +25,15 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { MdPowerSettingsNew } from "react-icons/md";
 
 function App() {
-
     return (
         <main>
-
-                <div className='left'>
-                    <Navbar />
-                </div>
+            <div className='left'>
+                {/* <Navbar /> */}
+            </div>
             <div className='container'>
 
                 <div className='right body'>
                     <div className='icon-img'></div>
-
-
-
-
-
                     <div
                         style={{ display: "flex" }}
                         className='search-bar'
@@ -54,30 +47,27 @@ function App() {
                             <input type="text" placeholder="Search" />
                         </div>
 
-                        <div className="search1" id="cart"><Link to='/cart'>{<FaCartPlus className='search' />}</Link>
-
+                        <div className="search1" id="cart">
+                            <Link to='/cart'>{<FaCartPlus className='search' />}</Link>
                         </div>
-                        <div className="search1" id="wishlist"><Link to='/wishlist'>{<FaHeart className='search' />}</Link>
-
+                        <div className="search1" id="wishlist"><Link to='/wishlist'>
+                            {<FaHeart className='search' />}</Link>
                         </div>
-                        <div className="search1" id="login" ><Link to='/register'>{<MdPowerSettingsNew className='search' />}</Link>
-
+                        <div className="search1" id="login" ><Link to='/signup'>
+                            {<MdPowerSettingsNew className='search' />}</Link>
                         </div>
-                        <div className="search1" id="settings"><Link to='/settings'>{<IoSettingsSharp className='search' />}</Link>
-
+                        <div className="search1" id="settings">
+                            <Link to='/settings'>{<IoSettingsSharp className='search' />}</Link>
                         </div>
-
                     </div>
-
 
                     <div className="horizontal-line"></div>
                 </div>
             </div>
 
 
-            <Routes >
+            <Routes > 
                 <Route path="/" element={<Home />} /> {/* Define a home route */}
-
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
                 {/* Define a route for Login */}
