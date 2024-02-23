@@ -35,7 +35,7 @@ function App() {
             <div className='container'>
 
                 <div className='right body'>
-                    <div className='icon-img'></div>
+                    
 
 
 
@@ -49,6 +49,9 @@ function App() {
                             <p className='title'>Kisaan Utsav</p>
                             <p className='h1'>Seeds of Change!</p>
                         </div>
+                    
+
+                        
 
                         <div>
                             <input type="text" placeholder="Search" />
@@ -69,6 +72,9 @@ function App() {
 
                     </div>
 
+                        {/* <div className='icon-img'>
+                       
+                    </div> */}
 
                     <div className="horizontal-line"></div>
                 </div>
