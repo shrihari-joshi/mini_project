@@ -28,17 +28,11 @@ function App() {
     return (
         <main>
             <div className='left'>
-                {/* <Navbar /> */}
+                <Navbar />
             </div>
             <div className='container'>
 
                 <div className='right body'>
-                    
-
-
-
-
-
                     <div
                         style={{ display: "flex" }}
                         className='search-bar'
@@ -47,9 +41,6 @@ function App() {
                             <p className='title'>Kisaan Utsav</p>
                             <p className='h1'>Seeds of Change!</p>
                         </div>
-                    
-
-                        
 
                         <div>
                             <input type="text" placeholder="Search" />
@@ -72,8 +63,7 @@ function App() {
                         {/* <div className='icon-img'>
                        
                     </div> */}
-
-                    <div className="horizontal-line"></div>
+              <div className="horizontal-line"></div>
                 </div>
             </div>
 

@@ -1,11 +1,15 @@
 import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Home from '../Home/Home';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
     const [cart, setCart] = useState([])
+    const userData = localStorage.getItem('currentUser')
+    const user = userData ? JSON.parse(userData) : null
+    // const navigate = useNavigate()
 
     const fetchSeeds = async () => {
         try {
@@ -18,25 +22,34 @@ const Seeds = () => {
     };
 
     useEffect(() => {
-        if (seeds.length === 0) {
-            fetchSeeds();
-        }
-    }, [seeds]); // Dependency on seeds state
+        fetchSeeds()
+    }, []); // Dependency on seeds state
+
         
-    const addToCart = async () => {
-        const updatedCart = [...cart, seeds]
-        setCart(updatedCart)
-    }
-    const buySeeds = async (id) => {
+    const addToCart = async (seed) => {
         try {
-            console.log('Buying seed with ID:', id);
+            const response = await axios.post('http://localhost:3500/addToCart', {
+                username : user.username,
+                name : seed.name,
+                type : seed.type
+            })
+            console.log(`${response.data} added to cart`);
+            // navigate('/cart')
+        }
+        catch (error){
+            console.log(error);
+        }
+    }
+    const buySeeds = async (seed) => {
+        try {
+            console.log('Buying seed with ID:', seed.name);
         } catch (error) {
             console.error('Error buying seed:', error);
         }
     };
 
     return (
-        <div>
+        <div style={{marginLeft : "300px"}}>
             
             <div className='mainbase'>
                 <p className='base'>
@@ -51,8 +64,8 @@ const Seeds = () => {
                             <p>Type: {seed.type}</p>
                             <p>Date Added: {new Date(seed.date).toLocaleDateString()}</p>
                             {/* you have to put icon for add to cart */}
-                            <button onClick={addToCart}>Add To Cart</button> 
-                            <button onClick={() => buySeeds(seed.id)}>Buy</button>
+                            <button onClick={() => addToCart(seed)}>Add To Cart</button> 
+                            <button onClick={() => buySeeds(seed)}>Buy</button>
                         </div>
                     </li>
                 ))}

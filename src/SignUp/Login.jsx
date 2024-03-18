@@ -18,7 +18,7 @@ const Login = () => {
                 username: username,
                 password: pass
             });
-
+            if (response)
             localStorage.setItem('currentUser', JSON.stringify(response.data));
             console.log(`${username} logged In`);
             navigate('/');

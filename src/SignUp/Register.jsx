@@ -41,13 +41,15 @@ const Register = () => {
         };
 
         try {
-            await axios.post('http://localhost:3500/register', user);
-            console.log(`${user.username} is created`);
-            setUsername('');
-            setEmail('');
-            setPass('');
-            setRetypePass('');
-            navigate('/');
+            const response = await axios.post('http://localhost:3500/register', user);
+
+                console.log(`${user.username} is created`);
+                console.log('successful')
+                setUsername('');
+                setEmail('');
+                setPass('');
+                setRetypePass('');
+                navigate('/');
         } catch (error) {
             console.error('Cannot send data:', error);
             alert('Failed to register. Please try again.');
