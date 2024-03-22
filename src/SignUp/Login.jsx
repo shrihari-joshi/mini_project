@@ -14,12 +14,10 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.post('http://localhost:3500/auth', {
-                username: username,
-                password: pass
-            });
-            if (response)
-            localStorage.setItem('currentUser', JSON.stringify(response.data));
+            const response = await axios.get(`http://localhost:3500/auth?username=${username}&password=${pass}`);
+            if (response){
+                localStorage.setItem('currentUser', JSON.stringify(response.data));
+            }
             console.log(`${username} logged In`);
             navigate('/');
         } catch (error) {

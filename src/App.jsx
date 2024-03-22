@@ -15,8 +15,8 @@ import Farming_Tools from './Farming_Tools/Farming_Tools';
 import Cart from './Cart/Cart';
 import Wishlist from './Wishlist'
 import Settings from './Settings'
-import Navbar from './Navbar';
-import './navbar.css'
+import Navbar from './Navbar/Navbar';
+import './Navbar/navbar.css'
 
 import { FaCartPlus } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
