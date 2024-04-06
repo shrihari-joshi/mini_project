@@ -1,10 +1,12 @@
 
-import Home from '../Home/Home'
+import './Plant_Nutrition.css'
 
 const Plant_Nutrition = () => {
     return (
-        <div>
-            <Home/> 
+        <div className='mainbase'>
+            <p className='base'>
+                plant nutrition
+            </p>
         </div>
     )
 }

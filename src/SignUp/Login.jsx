@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css'
 
-import './Register.css';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -13,7 +13,7 @@ const Login = () => {
 
         e.preventDefault();
 
-        try{
+        try {
             const response = await axios.post('http://localhost:3500/auth', {
                 username: username,
                 password: pass
@@ -28,29 +28,28 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <div className="login_page">
-                <form onSubmit={logIn}>
-                    <label htmlFor="username">Username:</label>
-                    <input  
-                        type='text'
-                        id='username'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <label htmlFor="pass">Password: </label>
-                    <input
-                        type='password' 
-                        id='pass'
-                        value={pass}
-                        onChange={(e) => setPass(e.target.value)}
-                    />
-                    <button type='submit' >Submit</button>
-                </form>
-                <p><span>Can't registered ?</span><Link to='/register'>Register here</Link></p>
-            </div>
+        <div className='mainbase'>
+            <div className='base'>
+
+            <div class="baklol">
+            <div class="heading">Sign In</div>
+            <form action="" class="form">
+                <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail" />
+                <input required="" class="input" type="password" name="password" id="password" placeholder="Password" />
+                <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
+                <input class="login-button" type="submit" value="Sign In" />
+                <span class="forgot-password"><a href="#">Don't have an account?</a></span>
+
+                <input class="login-button" type="submit" value="Sign Up" />
+            </form>
         </div>
+
+            </div>
+
+
+        </div>
+        
     );
 };
-  
+
 export default Login;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import './Cart.css'
 
 const Cart = () => {
     const [cart, setCart] = useState([]);
@@ -25,7 +26,9 @@ const Cart = () => {
 
 
     return (
-        <div>
+        <div className="mainbase">
+
+        <div className="base">
             <h1>Cart</h1>
             <button onClick={() => fetchCart()}>Refresh Cart</button>
             {cart.length > 0 ? (
@@ -42,6 +45,9 @@ const Cart = () => {
                 <p>No items in cart</p>
             )}
         </div>
+
+        </div>
+        
     );
 }
 

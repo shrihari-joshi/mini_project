@@ -2,8 +2,10 @@ import Home from "../Home/Home"
 
 const About = () => {
     return (
-        <div>
-            <Home/>
+        <div className="mainbase">
+            <p className="base">
+                About Us
+            </p>
         </div>
     )
 }

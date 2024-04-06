@@ -4,23 +4,21 @@ import { Route, Routes, Link } from 'react-router-dom';
 import Home from './Home/Home';
 import SignUp from './SignUp/SignUp';
 import Login from './SignUp/Login';
-import Register from './SignUp/Register';
-import Crop_Protection from './Crop_Protection/Crop_Protection';
+import Sell_Products from './Sell_Products/Sell_Products';
 import Seeds from './Seed/Seeds';
 import Plant_Nutrition from './Plant_Nutrition/Plant_Nutrition';
-import Weather_Forecast from './Weather_Forecast';
+import Weather_Forecast from './Weather_Forecast/Weather_Forecast';
 import Kisan_Care from './Kisan_Care/Kisan_Care';
 import About from './About/About';
 import Farming_Tools from './Farming_Tools/Farming_Tools';
 import Cart from './Cart/Cart';
-import Wishlist from './Wishlist'
-import Settings from './Settings'
+import Wishlist from './Wishlist/Wishlist'
+import Settings from './Settings/Settings'
 import Navbar from './Navbar';
 import './navbar.css'
 
 import { FaCartPlus } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { PiSignInBold } from "react-icons/pi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdPowerSettingsNew } from "react-icons/md";
 
@@ -28,17 +26,11 @@ function App() {
     return (
         <main>
             <div className='left'>
-                {/* <Navbar /> */}
+                <Navbar />
             </div>
             <div className='container'>
 
                 <div className='right body'>
-                    
-
-
-
-
-
                     <div
                         style={{ display: "flex" }}
                         className='search-bar'
@@ -69,9 +61,6 @@ function App() {
                         </div>
                     </div>
 
-                        {/* <div className='icon-img'>
-                       
-                    </div> */}
 
                     <div className="horizontal-line"></div>
                 </div>
@@ -83,9 +72,8 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
                 {/* Define a route for Login */}
-                <Route path="/register" element={<Register />} />
                 <Route path="/seeds" element={<Seeds />} />
-                <Route path="/crop-protection" element={<Crop_Protection />} />
+                <Route path="/sell_products" element={<Sell_Products />} />
                 <Route path="/plant-nutrition" element={<Plant_Nutrition />} />
                 <Route path="/farming-tools" element={<Farming_Tools />} />
                 <Route path="/weather-forecast" element={<Weather_Forecast />} />

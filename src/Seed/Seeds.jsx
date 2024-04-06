@@ -2,6 +2,7 @@ import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Home from '../Home/Home';
+import './Seeds.jsx';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
@@ -40,7 +41,7 @@ const Seeds = () => {
             
             <div className='mainbase'>
                 <p className='base'>
-                    Welcome
+                    Welcome to seeds
                 </p>
             </div>
             <ul>
