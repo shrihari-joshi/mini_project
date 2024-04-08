@@ -1,0 +1,35 @@
+/* Seed.css */
+.seed-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.seed-name {
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Example font size */
+}
+
+.seed-type, .seed-date, .seed-price, .seed-distributor {
+    margin-bottom: 5px;
+    font-size: 1em; /* Example font size */
+}
+
+.seed-quantity {
+    margin-bottom: 10px;
+    width: 50px; /* Example width */
+}
+
+.seed-btn {
+    margin-right: 10px;
+    padding: 5px 10px; /* Example padding */
+    background-color: #007bff; /* Example background color */
+    color: #fff; /* Example text color */
+    border: none;
+    border-radius: 3px; /* Example border radius */
+    cursor: pointer;
+}
+
+.seed-btn:hover {
+    background-color: #0056b3; /* Example hover background color */
+}

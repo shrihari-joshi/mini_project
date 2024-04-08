@@ -14,7 +14,12 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.get(`http://localhost:3500/auth?username=${username}&password=${pass}`);
+            const response = await axios.get(`http://localhost:3500/auth`,{ 
+                params : {
+                    username : username,
+                    password : pass
+                }
+            });
             if (response){
                 localStorage.setItem('currentUser', JSON.stringify(response.data));
             }

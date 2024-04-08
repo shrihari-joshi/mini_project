@@ -32,7 +32,8 @@ const Cart = () => {
             setIsLoading(false); // Set loading state to false if there's an error
         }
     };
-
+    
+    
     useEffect(() => {
         fetchCart()
     }, [])
@@ -51,6 +52,7 @@ const Cart = () => {
                                     <p>Name: {item.name}</p>
                                     <p>Type: {item.type}</p>
                                     <p>Date: {item.date}</p>
+                                    <p>Quantity: {item.quantity}</p>
                                     <hr />
                                 </div>
                             ))}
