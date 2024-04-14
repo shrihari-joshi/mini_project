@@ -1,13 +1,11 @@
 
-import './Farming_Tools.css'
+import Home from '../Home/Home';
 
 const Farming_Tools = () => {
     return (
-        <div className='mainbase'>
-            <p className='base'>
-                farming tools
-            </p>
-        </div>
+        <nav>
+            <Home/> 
+        </nav>
     )
 }
 

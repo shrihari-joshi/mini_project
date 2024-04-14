@@ -1,12 +1,10 @@
 import React from 'react'
-import './Kisan_Care.css'
+import Home from '../Home/Home'
 
 const Kisan_Care = () => {
     return (
-        <div className='mainbase'>
-           <p className='base'>
-            Kisan Care
-           </p>
+        <div>
+            <Home/>
         </div>
     )
 }

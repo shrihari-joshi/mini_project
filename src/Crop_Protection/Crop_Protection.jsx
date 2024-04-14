@@ -1,7 +1,7 @@
 
 import Home from '../Home/Home'
 
-const Plant_Nutrition = () => {
+const Crop_Protection = () => {
     return (
         <div>
             <Home/> 
@@ -9,4 +9,4 @@ const Plant_Nutrition = () => {
     )
 }
 
-export default Plant_Nutrition
+export default Crop_Protection

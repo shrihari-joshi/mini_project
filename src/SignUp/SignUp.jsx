@@ -1,23 +1,32 @@
 import { useState } from "react";
 import Login from "./Login";
+import Register from "./Register";
 import './SignUp.css'; // Import the CSS file
 
 const SignUp = ({ users, setUsers }) => {
     const [state, setState] = useState('login');
     
-
     const toggleState = () => {
         setState(state === 'login' ? 'register' : 'login');
     };
 
     return (
-        <div className="mainbase">
-
-        <div className="base">
-            <Login/>
+        <div className="body_sign">
+            <div className="state">
+                {state === 'login' ? <Login /> : <Register />}
+            </div>
             
-        </div>
-
+            {/* <div className="toggle"> */}
+                <div className="text">
+                    <p>{state === 'login' ? 'Haven\'t registered yet' : 'Already have an account?'}</p>
+                    <br></br>
+                </div>
+                <div className="toggle-button">  
+                    <button className="toggleState" onClick={toggleState}>
+                        {state === 'login' ? 'Register' : 'Login'}
+                    </button>
+                </div>
+            {/* </div> */}
         </div>
     );
 };

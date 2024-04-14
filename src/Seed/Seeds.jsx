@@ -1,63 +1,91 @@
-import Navbar from '../Navbar';
+import Navbar from '../Navbar/Navbar';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Home from '../Home/Home';
-import './Seeds.jsx';
+import SeedProduct from './SeedProduct';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+    const userData = localStorage.getItem('currentUser');
+    const user = userData ? JSON.parse(userData) : null;
+    // const navigate = useNavigate()
 
     const fetchSeeds = async () => {
         try {
-            const response = await axios.get('http://localhost:3500/seeds');
-            console.log('Data fetched');
-            setSeeds(response.data);
+        const response = await axios.get('http://localhost:3500/seeds');
+        console.log('Data fetched');
+        setSeeds(response.data);
         } catch (error) {
-            alert(error)
+        alert(error);
         }
     };
 
     useEffect(() => {
-        if (seeds.length === 0) {
-            fetchSeeds();
-        }
-    }, [seeds]); // Dependency on seeds state
-        
-    const addToCart = async () => {
-        const updatedCart = [...cart, seeds]
-        setCart(updatedCart)
-    }
-    const buySeeds = async (id) => {
+        fetchSeeds();
+    }, []); // Dependency on seeds state
+
+    const addToCart = async (seed, quantity) => {
         try {
-            console.log('Buying seed with ID:', id);
+        const response = await axios.post('http://localhost:3500/addToCart', {
+            username: user.username,
+            name: seed.name,
+            type: seed.type,
+            quantity: quantity,
+        });
+        console.log(`${response.data} added to cart`);
+        // navigate('/cart')
         } catch (error) {
-            console.error('Error buying seed:', error);
+        console.log(error);
         }
     };
 
-    return (
-        <div>
+    const buySeeds = async (seed) => {
+        try {
+            console.log('seed braught');
+        } catch (error) {
+        console.error('Error buying seed:', error);
+        }
+    };
+
+    // const handleConfirmAddress = async(user) {
+    //     if (confirm(user.address)) {
             
-            <div className='mainbase'>
-                <p className='base'>
-                    Welcome to seeds
-                </p>
-            </div>
+    //     }
+    // }
+
+    const addToWishList = async (seed) => {
+        try {
+            const res1 = await axios.post('http://localhost:3500/addToWishlist', {
+                username: user.username,
+                name: seed.name,
+                type: seed.type,
+            })
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    return (
+        <div style={{ marginLeft: '300px' }}>
+        <div className='mainbase'>
+            <p className='base'>Welcome to Seeds</p>
+        </div>
             <ul>
                 {seeds.map((seed, index) => (
                     <li key={index}>
                         <div>
-                            <h3>{seed.name}</h3>
-                            <p>Type: {seed.type}</p>
-                            <p>Date Added: {new Date(seed.date).toLocaleDateString()}</p>
-                            {/* you have to put icon for add to cart */}
-                            <button onClick={addToCart}>Add To Cart</button> 
-                            <button onClick={() => buySeeds(seed.id)}>Buy</button>
+                            <SeedProduct
+                                seed={seed}
+                                addToCart={addToCart}
+                                buySeeds={buySeeds}
+                                addToWishList={addToWishList}
+                            />
+                            
                         </div>
                     </li>
                 ))}
-
             </ul>
         </div>
     );
