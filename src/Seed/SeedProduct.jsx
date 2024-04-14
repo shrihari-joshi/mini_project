@@ -4,7 +4,7 @@ import Payment from './Payment';
 
 const SeedProduct = ({ seed, addToCart, buySeeds, addToWishList, handleConfirmAddress }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
-    const [addressConfirmed, setAddressConfirmed] = useState(false);
+    const [addressConfirmed, setAddressConfirmed] = useState(true);
 
     const handleQuantityChange = (e) => {
         setSelectedQuantity(Number(e.target.value));
