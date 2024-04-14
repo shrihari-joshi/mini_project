@@ -27,42 +27,45 @@ import { MdPowerSettingsNew } from "react-icons/md";
 function App() {
     return (
         <main>
-            <div className='left'>
-                <Navbar />
-            </div>
+            
             <div className='container'>
 
-                <div className='right body'>
+                <div className='body'>
                     <div
                         style={{ display: "flex" }}
-                        className='search-bar'
+                        
                     >
                         <div className='head'>
-                            <p className='title'>Kisaan Utsav</p>
-                            <p className='h1'>Seeds of Change!</p>
+                            <Link to='/home'>
+                                
+                            <img src="icon.jpg" alt="Description of the image" className='title' />
+                            </Link>
                         </div>
-
-                        <div>
+                        <div className='left'>
+                            <Navbar />
+                        </div>
+                        <div className='search-bar' >
                             <input type="text" placeholder="Search" />
                         </div>
 
                         <div className="search1" id="cart">
-                            <Link to='/cart'>{<FaCartPlus className='search' />}</Link>
+                            <Link to='/cart'>
+                                {<FaCartPlus className='search' />}
+                            </Link>
                         </div>
-                        <div className="search1" id="wishlist"><Link to='/wishlist'>
-                            {<FaHeart className='search' />}</Link>
+                        <div className="search1" id="wishlist">
+                            <Link to='/wishlist'>
+                                {<FaHeart className='search' />}
+                            </Link>
                         </div>
-                        <div className="search1" id="login" ><Link to='/signup'>
-                            {<MdPowerSettingsNew className='search' />}</Link>
-                        </div>
-                        <div className="search1" id="settings">
-                            <Link to='/settings'>{<IoSettingsSharp className='search' />}</Link>
+                        <div className="search1" id="login" >
+                            <Link to='/signup'>
+                                {<MdPowerSettingsNew className='search' />}
+                            </Link>
                         </div>
                     </div>
 
-                        {/* <div className='icon-img'>
-                       
-                    </div> */}
+                        
               <div className="horizontal-line"></div>
                 </div>
             </div>

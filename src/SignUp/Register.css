@@ -1,6 +1,6 @@
 .full{
-    background-color: #fefae0;
-    height: 100vh;
+    background-color: #eff6e0;
+    height: 70vh;
     width: 100vw;
     display: flex;
   align-items: center;
@@ -12,8 +12,8 @@
   position: fixed;
   margin: auto;
   padding: 20px;
-  border: 2px solid #9e2a2b;
-  background-color: #fefae0;
+  border: 2px solid #283618;
+  background-color: #eff6e0;
   border-radius: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -23,40 +23,65 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: 800;
-  font-size: 20px;
-  color: #9e2a2b;
+  font-size: 1.4rem;
+  color: #283618;
+
 }
 
-input {
+.input1 {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
   border: 1px solid #283618;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+.input2 {
+  width: 140%;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #283618;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 button {
-  background-color: #9e2a2b;
-  color: #fefae0;
-  padding: 10px 20px;
-  border: none;
+  background-color: #eff6e0;
+  color: #283618;
+  padding: 0.8rem 1rem;
+  border: 3px solid #283618;
   border-radius: 4px;
   cursor: pointer;
   font-size: 20px;
+  font-weight: 600;
   transition: background-color 0.5s, color 0.5s;
 }
 
 button:hover {
+  
+  font-weight: 600;
   background-color: #283618;
-  color: #fefae0;
+  color: #eff6e0;
+  padding: 0.8rem 1rem;
+  border: 3px solid #283618;
 }
 
 .login_page{
-    height: 100vh;
-    width: 100vw;
+    height: 50vh;
+    width: 20vw;
+    border-radius: 2rem;
+    margin-bottom: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
-background-color: #fefae0;
+    background-color: #eff6e0;
+    border: 3px solid #283618;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    
+}
+
+.loggedin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -33,13 +33,14 @@ const Login = () => {
     return (
         <div>
             <div className="login_page">
-                <form onSubmit={logIn}>
+                <form className="loggedin" onSubmit={logIn}>
                     <label htmlFor="username">Username:</label>
                     <input  
                         type='text'
                         id='username'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        className='input2'
                     />
                     <label htmlFor="pass">Password: </label>
                     <input
@@ -47,10 +48,11 @@ const Login = () => {
                         id='pass'
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
+                        className='input2'
                     />
                     <button type='submit' >Log in</button>
                 </form>
-                {/* <p><span>Can't registered ?</span><Link to='/register'>Register here</Link></p> */}
+                
             </div>
         </div>
     );

@@ -66,6 +66,7 @@ const Register = () => {
                     id='username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    className='input1'
                 />
                 <label htmlFor="email">Email:</label>
                 <input  
@@ -74,6 +75,7 @@ const Register = () => {
                     id='email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className='input1'
                 />
                 <label htmlFor="pass">Password:</label>
                 <input
@@ -82,6 +84,7 @@ const Register = () => {
                     id='pass'
                     value={pass}
                     onChange={(e) => setPass(e.target.value)}
+                    className='input1'
                 />
                 <label htmlFor="retype-pass">Confirm Password:</label>
                 <input
@@ -90,9 +93,9 @@ const Register = () => {
                     id='retype-pass'
                     value={retypePass}
                     onChange={(e) => setRetypePass(e.target.value)}
+                    className='input1'
                 />
                 <button type='submit' onClick={handleSubmit}>Register</button>
-                {/* <p><span>Login here</span><Link to='/login'>login here</Link></p> */}
             </form>
         </div>
     );

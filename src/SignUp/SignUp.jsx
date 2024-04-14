@@ -19,6 +19,7 @@ const SignUp = ({ users, setUsers }) => {
             {/* <div className="toggle"> */}
                 <div className="text">
                     <p>{state === 'login' ? 'Haven\'t registered yet' : 'Already have an account?'}</p>
+                    <br></br>
                 </div>
                 <div className="toggle-button">  
                     <button className="toggleState" onClick={toggleState}>
