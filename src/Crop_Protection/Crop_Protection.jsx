@@ -1,11 +1,9 @@
-import Home from '../Home/Home'
+import React from 'react'
 
 const Crop_Protection = () => {
-    return (
-        <div>
-            <Home/> 
-        </div>
-    )
+  return (
+    <h1>Crop_Protection</h1>
+  )
 }
 
 export default Crop_Protection
