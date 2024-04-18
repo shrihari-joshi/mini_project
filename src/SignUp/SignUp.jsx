@@ -16,17 +16,17 @@ const SignUp = ({ users, setUsers }) => {
                 {state === 'login' ? <Login /> : <Register />}
             </div>
             
-            {/* <div className="toggle"> */}
+            <div className="toggle">
                 <div className="text">
                     <p>{state === 'login' ? 'Haven\'t registered yet' : 'Already have an account?'}</p>
                     <br></br>
                 </div>
-                <div className="toggle-button">  
-                    <button className="toggleState" onClick={toggleState}>
+                <div className="togglebut">  
+                    <button className="togglebutton" onClick={toggleState}>
                         {state === 'login' ? 'Register' : 'Login'}
                     </button>
                 </div>
-            {/* </div> */}
+            </div>
         </div>
     );
 };

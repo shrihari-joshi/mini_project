@@ -1,38 +1,38 @@
-.body_sign  {
-    height: 87vh;
-    background-color: #eff6e0;
+.body_sign {
+    height: 80vh;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     padding-bottom: 0;
 }
 
-.sign { 
-    list-style: none;
-    /* height: 40vh;
-    width: 10vw; */
-    align-content: center;
-    display: flex;
-    flex-direction: column ;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    border-radius: 1rem;
-    border: 2px solid #2f3e46;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-     
+.text {
+    font-size: 1.5rem;
+    color: #283618;
 }
 
+.togglebut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.text{
-    background-color: #eff6e0;
-    font-size: 1.5rem;
-    /* padding-top: 0.3rem; */
+.togglebutton {
     color: #283618;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.togglebutton:hover {
+    font-weight: 600;
+    background-color: #283618;
+    color: #eff6e0;
+    padding: 0.8rem 1rem;
 }

@@ -6,6 +6,7 @@ import './navbar.css';
 const Navbar = () => {
     
     return (
+        
         <div className="left-navbar">
             <ul className='navbar'>
                 <li className='border'><Link to='/seeds'>Seeds</Link></li>
