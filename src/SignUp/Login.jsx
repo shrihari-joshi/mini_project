@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-import './Register.css';
+import './Login.css';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -32,29 +32,33 @@ const Login = () => {
 
     return (
         <div>
-            <div className="login_page">
+            
                 <form className="loggedin" onSubmit={logIn}>
-                    <label htmlFor="username">Username:</label>
+                <div className="login_page">
+                    {/* <label htmlFor="username">Username:</label> */}
                     <input  
+                        placeholder='Username:'
                         type='text'
                         id='username'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         className='input2'
                     />
-                    <label htmlFor="pass">Password: </label>
+                    {/* <label htmlFor="pass">Password: </label> */}
                     <input
+                        placeholder='Password:'
                         type='password' 
                         id='pass'
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
                         className='input2'
                     />
-                    <button type='submit' >Log in</button>
+                    <button className='loginbutton' type='submit' >Log in</button>
+                </div>
                 </form>
                 
             </div>
-        </div>
+        
     );
 };
   

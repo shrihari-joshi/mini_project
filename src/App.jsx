@@ -40,7 +40,7 @@ function App() {
                                 <Navbar />
                             </div>
                             <div className='search-bar'>
-                                <input type="text" placeholder="Search" />
+                                <input className='inputser' type="text" placeholder="Search" />
                             </div>
                             <div className="search1" id="cart">
                                 <Link to='/cart'>

@@ -59,8 +59,9 @@ const Register = () => {
     return (
         <div className='full'>
             <form className='page'>
-                <label htmlFor="username">Username:</label>
+                {/* <label htmlFor="username">Username:</label> */}
                 <input  
+                    placeholder='Username:'
                     required
                     type='text'
                     id='username'
@@ -68,8 +69,9 @@ const Register = () => {
                     onChange={(e) => setUsername(e.target.value)}
                     className='input1'
                 />
-                <label htmlFor="email">Email:</label>
+                {/* <label htmlFor="email">Email:</label> */}
                 <input  
+                    placeholder='Email:'
                     required
                     type='email'
                     id='email'
@@ -77,8 +79,9 @@ const Register = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     className='input1'
                 />
-                <label htmlFor="pass">Password:</label>
+                {/* <label htmlFor="pass">Password:</label> */}
                 <input
+                    placeholder='Password:'
                     required
                     type='password' 
                     id='pass'
@@ -86,8 +89,9 @@ const Register = () => {
                     onChange={(e) => setPass(e.target.value)}
                     className='input1'
                 />
-                <label htmlFor="retype-pass">Confirm Password:</label>
+                {/* <label htmlFor="retype-pass">Confirm Password:</label> */}
                 <input
+                    placeholder='Confirm Password:'
                     required
                     type='password' 
                     id='retype-pass'
@@ -95,7 +99,7 @@ const Register = () => {
                     onChange={(e) => setRetypePass(e.target.value)}
                     className='input1'
                 />
-                <button type='submit' onClick={handleSubmit}>Register</button>
+                <button className='regbutton' type='submit' onClick={handleSubmit}>Register</button>
             </form>
         </div>
     );
