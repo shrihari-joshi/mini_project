@@ -18,7 +18,7 @@ const Seeds = () => {
 
     const fetchSeeds = async () => {
         try {
-            const response = await axios.get('http://localhost:3500/seeds');
+            const response = await axios.get('http://localhost:3500/getAllSeeds');
             console.log('Data fetched');
             setSeeds(response.data);
         } catch (error) {

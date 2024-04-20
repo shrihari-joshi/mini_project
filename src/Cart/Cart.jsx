@@ -18,8 +18,10 @@ const Cart = () => {
             console.log(`${user.username} logged in in front end`);
 
             setTimeout(async () => {
-                const response = await axios.post('http://localhost:3500/cart', {
-                    username: user.username
+                const response = await axios.get('http://localhost:3500/getCart', {
+                    params : {
+                        username: user.username
+                    }
                 }); 
                 setCart(response.data.cart);
                 localStorage.setItem('currentUser', JSON.stringify({ ...user, cart : response.data.cart}))
