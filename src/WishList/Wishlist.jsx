@@ -1,8 +1,7 @@
-import Home from "./Home/Home"
+import Home from "../Home/Home"
 
 const Wishlist = () => {
 
-    
     return (
         <div>
             <h1 style={{
