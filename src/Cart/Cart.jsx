@@ -1,60 +1,75 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Loading from "../Loading";
 
 const Cart = () => {
     const [cart, setCart] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
     const userData = localStorage.getItem('currentUser');
     const user = userData ? JSON.parse(userData) : null;
+    const [total, setTotal] = useState(0)
+    const navigate = useNavigate()
+
+    if (!user) {
+        navigate('/signup')
+    }
 
     const fetchCart = async () => {
         try {
-            setIsLoading(true); // Set loading state to true
+            setIsLoading(true);
             if (!user) {
                 console.error('User data not found in localStorage');
                 return;
             }
-            console.log(`${user.username} logged in in front end`);
-
             setTimeout(async () => {
                 const response = await axios.get('http://localhost:3500/getCart', {
                     params : {
                         username: user.username
                     }
-                }); 
-                setCart(response.data.cart);
-                localStorage.setItem('currentUser', JSON.stringify({ ...user, cart : response.data.cart}))
-                console.log(response.data.cart);
+                });  
+                if (response.data.length > 0) {
+                    setCart(response.data);
+                }
+                let sum = 0;
+                cart.forEach((cartItem) => {
+                    sum += cartItem.seedPrice * cartItem.quantity;
+                });
+                setTotal(sum);
+
+                console.log(response);
+                // localStorage.setItem('currentUser', JSON.stringify({ ...user, cart : response.data.cart}))
+                console.log(response.data);
                 setIsLoading(false); // Set loading state to false after data is fetched
             }, 1500); 
-    
+
         } catch (error) {
             console.error('Error fetching cart:', error.response);
-            setIsLoading(false); // Set loading state to false if there's an error
+            setIsLoading(false);
         }
     };
-    
-    
+
     useEffect(() => {
-        fetchCart()
-    }, [])
+        fetchCart();
+    }, []);
 
     return (
-        <div style={{marginLeft : "300px"}}>
-            <h1>Cart : {user.username}</h1>
-            <h2>Total Items : {user.cart.length}</h2>
-            <button onClick={() => fetchCart()}>Refresh Cart</button>
-            {isLoading ? <Loading /> : (
+        <div style={{ marginLeft: "300px" }}>
+            <h1>Cart : {user?.username}</h1>
+            {isLoading ? (
+                <Loading />
+            ) : (
                 <>
-                    {cart.length > 0 ? (
+                    <h2>Total Items : {cart?.length || 0}</h2>
+                    <button onClick={fetchCart}>Refresh Cart</button>
+                    {cart?.length > 0 ? (
                         <div>
-                            {cart.map((item, index) => (
+                            {cart.map((cartItem, index) => (
                                 <div key={index}>
-                                    <p>Name: {item.name}</p>
-                                    <p>Type: {item.type}</p>
-                                    <p>Date: {item.date}</p>
-                                    <p>Quantity: {item.quantity}</p>
+                                    <p>Name: {cartItem?.seedName}</p>
+                                    <p>Type: {cartItem?.seedType}</p>
+                                    <p>Price: {cartItem?.seedPrice}</p>
+                                    <p>Quantity: {cartItem?.quantity}</p>
                                     <hr />
                                 </div>
                             ))}
@@ -64,9 +79,9 @@ const Cart = () => {
                     )}
                 </>
             )}
+            <h2>Total Price : {total}</h2>
         </div>
     );
-    
-}
+};
 
 export default Cart;

@@ -12,7 +12,7 @@ import Weather_Forecast from './Weather_Forecast';
 import Kisan_Care from './Kisan_Care/Kisan_Care';
 import About from './About/About';
 import Cart from './Cart/Cart';
-import Wishlist from './Wishlist';
+import Wishlist from './WishList/Wishlist';
 import Settings from './Settings';
 import Navbar from './Navbar/Navbar';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
