@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Checkout from './Payment/Checkout.js'
 import Loading from "../Loading";
 
 const Cart = () => {
@@ -10,7 +11,6 @@ const Cart = () => {
     const user = userData ? JSON.parse(userData) : null;
     const [total, setTotal] = useState(0)
     const navigate = useNavigate()
-
     if (!user) {
         navigate('/signup')
     }
@@ -29,14 +29,15 @@ const Cart = () => {
                     }
                 });  
                 if (response.data.length > 0) {
+                    let sum = 0;
+                    cart.forEach((cartItem) => {
+                        sum += cartItem.seedPrice * cartItem.quantity;
+                    });
+                    setTotal(sum);
+                    // const totalPrice = localStorage.setItem('total', sum)
                     setCart(response.data);
                 }
-                let sum = 0;
-                cart.forEach((cartItem) => {
-                    sum += cartItem.seedPrice * cartItem.quantity;
-                });
-                setTotal(sum);
-
+                
                 console.log(response);
                 // localStorage.setItem('currentUser', JSON.stringify({ ...user, cart : response.data.cart}))
                 console.log(response.data);
@@ -80,6 +81,9 @@ const Cart = () => {
                 </>
             )}
             <h2>Total Price : {total}</h2>
+            <div>
+                <Checkout/>
+            </div>
         </div>
     );
 };

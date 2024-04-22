@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Seed.css'; // Import CSS file
 
-const SeedProduct = ({ seed, addToCart, buySeeds, addToWishList, handleConfirmAddress }) => {
+const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [addressConfirmed, setAddressConfirmed] = useState(true);
 
@@ -28,7 +28,7 @@ const SeedProduct = ({ seed, addToCart, buySeeds, addToWishList, handleConfirmAd
             <button onClick={() => addToCart(seed, selectedQuantity)} className="seed-btn">Add To Cart</button>
             {/* <button onClick={() => buySeeds(seed)} className="seed-btn">Buy</button> */}
             <button onClick={() => addToWishList(seed)} className="seed-btn">Add to Wishlist</button>
-            <button onClick={buySeeds} className="seed-btn">Buy</button>
+            {/* <button onClick={buySeeds} className="seed-btn">Buy</button> */}
         </div>
     );
 };

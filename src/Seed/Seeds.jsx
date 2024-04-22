@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from '../Home/Home';
 import SeedProduct from './SeedProduct';
 import { assets } from '../assets/assets';
-import SeedSellingPage from './SeedSellingPage';
+// import SeedSellingPage from './SeedSellingPage';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
@@ -62,7 +62,7 @@ const Seeds = () => {
         try {
             const res1 = await axios.post('http://localhost:3500/addToWishlist', {
                 username: user.username,
-                name: seed.name
+                seedName: seed.name
             });
             notifySuccess(`${seed.name} added to wishlist successfully`);
         } catch (err) {
@@ -72,7 +72,7 @@ const Seeds = () => {
 
     return (
         <div>
-            {/* <div className='mainbase'>
+            <div className='mainbase'>
                 <p className='base'>Welcome to Seeds</p>
             </div>
             <ul>
@@ -82,14 +82,14 @@ const Seeds = () => {
                             <SeedProduct
                                 seed={seed}
                                 addToCart={addToCart}
-                                buySeeds={buySeeds}
+                                // buySeeds={buySeeds}
                                 addToWishList={addToWishList}
                             />
                         </div>
                     </li>
                 ))}
             </ul>
-            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} /> */}
+            <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
             {/* <div className="main">
                 <div className="card">
                     <img src={assets.wheat} alt="Wheat" />
@@ -98,7 +98,7 @@ const Seeds = () => {
                     
                 </div>
             </div> */}
-            <SeedSellingPage/>
+            {/* <SeedSellingPage/> */}
         </div>
     );
 };
