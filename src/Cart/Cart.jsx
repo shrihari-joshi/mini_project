@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Loading from "../Loading";
+import Checkout from './Payment/Checkout.js'
 
 const Cart = () => {
     const [cart, setCart] = useState([]);
@@ -62,7 +63,11 @@ const Cart = () => {
                     )}
                 </>
             )}
+            <div>
+                <Checkout/>
+            </div>
         </div>
+        
     );
     
 }

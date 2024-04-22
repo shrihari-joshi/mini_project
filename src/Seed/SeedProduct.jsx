@@ -14,11 +14,11 @@ const SeedProduct = ({ seed, addToCart, buySeeds, addToWishList, handleConfirmAd
         <div className="seed-container">
             <h3 className="seed-name">{seed.seedName}</h3>
             <p className="seed-type">Type: {seed.type}</p>
-            <p className="seed-date">Date Added: {new Date(seed.date).toLocaleDateString()}</p>
+            {/* <p className="seed-date">Date Added: {new Date(seed.date).toLocaleDateString()}</p> */}
             <p className="seed-price">Price: {seed.price}</p>
-            <p className="seed-distributor">
+            {/* <p className="seed-distributor">
                 Distributed by: {seed.distributer ? seed.distributer : ' No distributor added'}
-            </p>
+            </p> */}
             <input
                 type="number"
                 min="1"
