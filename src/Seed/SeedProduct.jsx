@@ -8,16 +8,48 @@ const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) =
     const handleQuantityChange = (e) => {
         setSelectedQuantity(Number(e.target.value));
     };
+
+    // const inc = () => {
+    //     let input = document.getElementsByClassName('myNumber');
+    //     let value = parseInt(input.value, 10);
+    //     value = isNaN(value) ? 0 : value;
+    //     value++;
+    //     input.value = value;
+    // };
+
+    // const dec = () => {
+    //     let input = document.getElementsByClassName('myNumber');
+    //     let value = parseInt(input.value, 10);
+    //     value = isNaN(value) ? 0 : value;
+    //     value--;
+    //     input.value = value;
+    // };
+    
     
     return (
         <div className="seed-container">
             <h3 className="seed-name">{seed.name}</h3>
-            <p className="seed-type">Type: {seed.type}</p>
-            <p className="seed-price">Price: {seed.price}</p>
-            <p className="seed-total">Total Price: {seed.price * selectedQuantity}</p>
+            <p className="seed-type"><strong>Type:</strong> {seed.type}</p>
+            <p className="seed-price"><strong>Price:</strong> {seed.price}</p>
+            <p className="seed-total"><strong>Total Price:</strong> {seed.price * selectedQuantity}</p>
             <p className="seed-distributor">
-                Distributed by: {seed.distributer ? seed.distributer : ' No distributor added'}
+                <strong>Distributed by:</strong> {seed.distributer ? seed.distributer : ' No distributor added'}
             </p>
+            {/* <div class="quantity">
+                <div className="symbol minus" onClick={dec}>
+                    <p className="operators">-</p>
+                </div>
+                <input 
+                type="number" 
+                min="1" 
+                value={selectedQuantity}
+                onChange={handleQuantityChange}
+                className="myNumber seed-quantity"
+                />
+                <div className="symbol plus" onClick={inc}>
+                    <p className="operators">+</p>
+                </div>
+            </div> */}
             <input
                 type="number"
                 min="1"
@@ -25,9 +57,11 @@ const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) =
                 onChange={handleQuantityChange}
                 className="seed-quantity"
             />
+            <div className="btn-container">
             <button onClick={() => addToCart(seed, selectedQuantity)} className="seed-btn">Add To Cart</button>
             {/* <button onClick={() => buySeeds(seed)} className="seed-btn">Buy</button> */}
             <button onClick={() => addToWishList(seed)} className="seed-btn">Add to Wishlist</button>
+            </div>
             {/* <button onClick={buySeeds} className="seed-btn">Buy</button> */}
         </div>
     );
