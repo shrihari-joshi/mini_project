@@ -55,11 +55,11 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }) {
           },
         }}
       >
-        <ToggleButton value>
+        {/* <ToggleButton value>
           <AutoAwesomeRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
           Custom theme
-        </ToggleButton>
-        <ToggleButton value={false}>Material Design 2</ToggleButton>
+        </ToggleButton> */}
+        {/* <ToggleButton value={false}>Material Design 2</ToggleButton> */}
       </ToggleButtonGroup>
     </Box>
   );
@@ -145,7 +145,7 @@ export default function Checkout() {
               height: 150,
             }}
           >
-            <Button
+            {/* <Button
               startIcon={<ArrowBackRoundedIcon />}
               component="a"
               href="/material-ui/getting-started/templates/landing-page/"
@@ -159,7 +159,7 @@ export default function Checkout() {
                 style={logoStyle}
                 alt="Sitemark's logo"
               />
-            </Button>
+            </Button> */}
           </Box>
           <Box
             sx={{
@@ -170,7 +170,7 @@ export default function Checkout() {
               maxWidth: 500,
             }}
           >
-            <Info totalPrice={activeStep >= 2 ? '$144.97' : '$134.98'} />
+            {/* <Info totalPrice={activeStep >= 2 ? '$144.97' : '$134.98'} /> */}
           </Box>
         </Grid>
         <Grid
@@ -207,7 +207,7 @@ export default function Checkout() {
                 justifyContent: 'space-between',
               }}
             >
-              <Button
+              {/* <Button
                 startIcon={<ArrowBackRoundedIcon />}
                 component="a"
                 href="/material-ui/getting-started/templates/landing-page/"
@@ -221,8 +221,8 @@ export default function Checkout() {
                   style={logoStyle}
                   alt="Sitemark's logo"
                 />
-              </Button>
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+              </Button> */}
+              {/* <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} /> */}
             </Box>
             <Box
               sx={{
@@ -234,7 +234,7 @@ export default function Checkout() {
                 height: 150,
               }}
             >
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+              {/* <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} /> */}
               <Stepper
                 id="desktop-stepper"
                 activeStep={activeStep}
@@ -326,7 +326,7 @@ export default function Checkout() {
                   <strong>&nbsp;#140396</strong>. We have emailed your order
                   confirmation and will update you once its shipped.
                 </Typography>
-                <Button
+                {/* <Button
                   variant="contained"
                   sx={{
                     alignSelf: 'start',
@@ -334,7 +334,7 @@ export default function Checkout() {
                   }}
                 >
                   Go to my orders
-                </Button>
+                </Button> */}
               </Stack>
             ) : (
               <React.Fragment>
@@ -395,10 +395,10 @@ export default function Checkout() {
           </Box>
         </Grid>
       </Grid>
-      <ToggleCustomTheme
+      {/* <ToggleCustomTheme
         toggleCustomTheme={toggleCustomTheme}
         showCustomTheme={showCustomTheme}
-      />
+      /> */}
     </ThemeProvider>
   );
 }
