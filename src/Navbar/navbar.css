@@ -20,9 +20,9 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 
 
 .title{
-  height: 11vh;
+  height: 10vh;
   margin-top: -0.5rem;
-  margin-right: 4rem;
+  margin-right: 2rem;
   margin-left: 2rem;
   border-radius: 3rem;
   cursor: pointer;
@@ -34,18 +34,19 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   height: 13vh;
   width: 100vw; 
   margin: 0px;
-  
+  position: sticky;
+  top: 0;
 }
 
 .navbar {
   list-style: none;
   padding: 0;
   margin-top: 3.5%;
-  margin-right: 3vw;
+  margin-right: 3rem;
   height: 100%;
   display: flex;
   flex-direction: row;
-  
+  justify-content: space-between;
 }
 
 
@@ -61,26 +62,22 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   display: flex;
   transition: background-color 0.8s, color 0.8s;
   border-radius: 0.4rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   font-weight: 600;
   justify-content: center;
-  transition: 0.8s ease ;
+  transition: 0.3s ease ;
   margin-right: 0.5rem;
   
 
   
 } 
-
-
 .navbar li a:hover {
   background-color: #283618; 
   color: #fefae0; 
-  padding: 0.5rem; 
+
   border-radius: 0.4rem;
   font-weight: 600;
   font-size: 1.3rem;
-  width:100%;
-  
 }
 
 
@@ -97,10 +94,10 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 }
 .search{
   color: #283618;
-  width: 2vw;
+  width: 2rem;
 }
 .inputser {
-  width: 23vw; 
+  width: 20.5rem; 
   padding: 2.5%;
   margin: -3%; 
   border: 3px solid #283618;

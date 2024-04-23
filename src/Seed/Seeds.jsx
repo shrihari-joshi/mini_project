@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from '../Home/Home';
 import SeedProduct from './SeedProduct';
 import { assets } from '../assets/assets';
+import './Seeds.css'
 // import SeedSellingPage from './SeedSellingPage';
 
 const Seeds = () => {
@@ -73,9 +74,9 @@ const Seeds = () => {
     return (
         <div>
             <div className='mainbase'>
-                <p className='base'>Welcome to Seeds</p>
+                <p className='base'>Discover Your Seed Sanctuary</p>
             </div>
-            <ul>
+            <ul className='products'>
                 {seeds.map((seed, index) => (
                     <li key={index}>
                         <div>
