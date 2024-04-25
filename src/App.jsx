@@ -5,10 +5,9 @@ import Home from './Home/Home';
 import SignUp from './SignUp/SignUp';
 import Login from './SignUp/Login';
 import Register from './SignUp/Register';
-import Crop_Protection from './Crop_Protection/Crop_Protection';
 import Seeds from './Seed/Seeds';
 import Plant_Nutrition from './Plant_Nutrition/Plant_Nutrition';
-import Weather_Forecast from './Weather_Forecast';
+import WeatherForecast from './Weather_forecast/WeatherForecast';
 import Kisan_Care from './Kisan_Care/Kisan_Care';
 import About from './About/About';
 import Cart from './Cart/Cart';
@@ -68,8 +67,8 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/seeds" element={<Seeds />} />
-                    <Route path="/crop-protection" element={<Crop_Protection />} />
-                    <Route path="/weather-forecast" element={<Weather_Forecast />} />
+                    <Route path="/weather-forecast" element={<WeatherForecast />} />
+                    <Route path='/pant-nutrition' element={Plant_Nutrition} />
                     <Route path="/kisan-care" element={<Kisan_Care />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/wishlist" element={<Wishlist />} />

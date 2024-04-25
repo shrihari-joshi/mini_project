@@ -1,49 +1,44 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from '../Home/Home';
-import SeedProduct from './SeedProduct';
+import FertilizerItem from './FerilizerItem';
 
-const Seeds = () => {
-    const [seeds, setSeeds] = useState([]);
+const Fertilizer = () => {
+    const [fertilizers, setFertilizers] = useState([]);
     const userData = localStorage.getItem('currentUser');
     const user = userData ? JSON.parse(userData) : null;
-    // const navigate = useNavigate();
 
     const notifyError = (msg) => toast.error(msg, { position: 'top-center' });
     const notifyWarning = (msg) => toast.warn(msg, { position: 'top-center'})
     const notifySuccess = (msg) => toast.success(msg, { position: 'top-center' });
-
-    const fetchSeeds = async () => {
+    const fetchFertilizers = async () => {
         try {
-            const response = await axios.get('http://localhost:3500/getAllSeeds');
-            console.log(response.data);
-            setSeeds(response.data);
+            const response = await axios.get('http://localhost:3500/getAllFertilizers');
+            setFertilizers(response.data);
         } catch (error) {
             notifyError(error.message);
         }
     };
 
     useEffect(() => {
-        fetchSeeds();
+        fetchFertilizers();
     }, []);
 
-    const addToCart = async (seed, quantity) => {
+    const addToCart = async (fertilizer, quantity) => {
         try {
             if (user) {
                 const response = await axios.post('http://localhost:3500/addToCart', {
                     username: user.username,
-                    name: seed.name,
-                    type: "seed",
+                    name: fertilizer.name,
+                    type: "fertilizer",
                     quantity: quantity,
                 });
                 if (response.data.length === 0) {
                     <h1>Cart is empty</h1>
                 }
                 console.log(`${response.data} added to cart`);
-                notifySuccess(`${seed.name} added to cart successfully`);
+                notifySuccess(`${fertilizer.name} added to cart successfully`);
             }
             else {
                 notifyWarning('Login to add items to Cart')
@@ -54,15 +49,15 @@ const Seeds = () => {
         }
     };
 
-    const addToWishList = async (seed) => {
+    const addToWishList = async (fertilizer) => {
         try {
             if (user){
                 const res = await axios.post('http://localhost:3500/addToWishlist', {
                     username: user.username,
-                    name: seed.name,
-                    type : "seed"
+                    name: fertilizer.name,
+                    type : "fertilizer"
                 });
-                notifySuccess(`${seed.name} added to wishlist successfully`);
+                notifySuccess(`${fertilizer.name} added to wishlist successfully`);
             }
             else {
                 notifyWarning('Login to add items to Wishlist')
@@ -75,18 +70,16 @@ const Seeds = () => {
     return (
         <div>
             <div className='mainbase'>
-                <p className='base'>Discover Your Seed Sanctuary</p>
+                <p className='base'>Welcome to Fertilizers</p>
             </div>
-            <ul className='products'>
-                {seeds.map((seed, index) => (
+            <ul>
+                {fertilizers.map((fertilizer, index) => (
                     <li key={index}>
-                        <div>
-                            <SeedProduct
-                                seed={seed}
-                                addToCart={addToCart}
-                                addToWishList={addToWishList}
-                            />
-                        </div>
+                        <FertilizerItem
+                            fertilizer={fertilizer}
+                            addToCart={addToCart}
+                            addToWishList={addToWishList}
+                        />
                     </li>
                 ))}
             </ul>
@@ -95,4 +88,4 @@ const Seeds = () => {
     );
 };
 
-export default Seeds; 
+export default Fertilizer;

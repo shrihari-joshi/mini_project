@@ -56,4 +56,7 @@
   padding: 0.8rem 1rem;
 }
 
+.name-input, .password-input {
+  display: flex;
+}
 

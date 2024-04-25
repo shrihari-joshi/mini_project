@@ -1,9 +1,6 @@
-import React from 'react'
+import * as React from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const Loading = () => {
-  return (
-    <h1>Loading...</h1>
-  )
+export default function Loading() {
+  return <CircularProgress disableShrink />;
 }
-
-export default Loading
