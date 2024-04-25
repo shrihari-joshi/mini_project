@@ -60,10 +60,6 @@ function App() {
                         </div>
                         <div className="horizontal-line"></div>
                     </div>
-                    <div>
-                        {/* <p>Image Slider</p> */}
-                        {/* <ImageSlider/> */}
-                    </div>
                 </div>
 
                 <Routes>
@@ -73,11 +69,10 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/seeds" element={<Seeds />} />
                     <Route path="/weather-forecast" element={<WeatherForecast />} />
-                    <Route path='/pant-nutrition' element={Plant_Nutrition} />
+                    {/* <Route path='/pant-nutrition' element={Plant_Nutrition} /> */}
                     <Route path="/kisan-care" element={<Kisan_Care />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/wishlist" element={<Wishlist />} />
-                    <Route path="/settings" element={<Settings />} />
                     <Route path="/About" element={<About />} />
                     <Route path="/plant-nutrition" element={<Plant_Nutrition />} />
                 </Routes>

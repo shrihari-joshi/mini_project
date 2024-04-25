@@ -1,8 +1,8 @@
-import Home from '../Home/Home'
+import Home from '../Home/Home';
 import { useState } from "react";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
-import './Kisan_Care.css'
+import './Kisan_Care.css'; // Changed CSS file name to match convention
 
 const makeRequestAPI = async (prompt) => {
     const res = await axios.post("http://localhost:3500/generate", { prompt });
@@ -19,14 +19,14 @@ const formatResponse = (response) => {
             {lines.map((line, idx) => {
                 if (idx % 2 === 0) {
                 return (
-                    <p key={idx} className="normal">
+                    <p key={idx} className="response-paragraph"> 
                         {line}
                     </p>
                 );
                 } else {
                 const numberedLines = line.split(/\*\*(\d+)\. /).filter(Boolean);
                 return (
-                    <ol key={idx} className="numbered">
+                    <ol key={idx} className="response-ordered-list"> 
                         {numberedLines.map((numberedLine, index) => (
                             <li key={index}>{numberedLine}</li>
                         ))}
@@ -39,8 +39,7 @@ const formatResponse = (response) => {
     });
 };
   
-
-function Kisan_Care() {
+function KisanCare() { // Changed function name to camelCase
     const [prompt, setPrompt] = useState("");
     //!mutation
     const mutation = useMutation({
@@ -54,31 +53,32 @@ function Kisan_Care() {
     };
     console.log(mutation);
     return (
-        <div className="App">
+        <div className="kisan-care"> 
             <header>
-                <h1>Ask our AI about crops and fertilizers</h1>
+                <h1>Ask our AI about your crops and fertilizers</h1>
             </header>
+            <form className="kisan-care-form" onSubmit={submitHandler}> 
             <p>Enter a prompt and let our AI craft a unique solution for your problem.</p>
-            <form className="App-form" onSubmit={submitHandler}>
                 <label htmlFor="Enter your prompt:"></label>
                 <input
                     type="text"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Write your problem here..."
-                    className="App-input"
+                    className="kisan-care-input" 
                 />
-                <button className="App-button" type="submit">
-                    Generate Solution
-                </button>
-                <section className="App-response">
+                
+                <section className="kisan-care-response"> 
                     {mutation.isPending && <p>Generating solution for your problem...</p>}
                     {mutation.isError && <p>Cannot fulfill your request for this time</p>}
                     {mutation.isSuccess && formatResponse(mutation.data)}
                 </section>
             </form>
+            <button className="kisan-care-button" type="submit"> 
+                    Generate Solution
+                </button>
         </div>  
     );
 }
 
-export default Kisan_Care;
+export default KisanCare; // Changed export name to camelCase

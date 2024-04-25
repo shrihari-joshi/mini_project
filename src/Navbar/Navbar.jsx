@@ -12,7 +12,6 @@ const Navbar = () => {
                 <li className='border'><Link to='/seeds'>Seeds</Link></li>
                 <li className='border'><Link to='/weather-forecast'>Weather Forecast</Link></li>
                 <li className='border'><Link to='/plant-nutrition'>Plant Nutrition</Link></li>
-                <li className='border'><Link to='/crop-protection'>Sell Products</Link></li>
                 <li className='border'><Link to='/kisan-care'>Kisan Care</Link></li>
             </ul>
                 

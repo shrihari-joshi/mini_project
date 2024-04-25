@@ -5,12 +5,13 @@ import './home.css';
 // import Slider from 'react-slick';
 import ImageSlider from '../Slider/Slider';
 
+
 const Home = () => {
 
     return (
        <div className='mainbase'>
-           <p>Welcome!!</p>
-                <ImageSlider/>
+           {/* <p>Welcome!!</p>
+                <ImageSlider/> */}
             
        </div>
     );

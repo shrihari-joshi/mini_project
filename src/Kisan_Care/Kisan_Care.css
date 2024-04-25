@@ -1,74 +1,94 @@
-/* App layout */
-.App {
-    text-align: center;
-    padding: 2rem;
-    color: #333;
-  }
-  
-  .App-header {
-    background-color: #f8f9fa;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
-    border-bottom: 2px solid #eee;
-  }
-  
-  .App-header h1 {
-    color: #007bff;
-    font-size: 2.5rem;
-  }
-  
-  .App-header p {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .App-form {
-    max-width: 480px;
-    margin: 0 auto 2rem;
-  }
-  
-  .App-label {
-    display: block;
-    text-align: left;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #444;
-  }
-  
-  .App-input {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-  }
-  
-  .App-button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s;
-  }
-  
-  .App-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .App-response {
-    font-size: 1rem;
-    color: #444;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border: 1px solid #eee;
-    border-radius: 0.25rem;
-  }
-  
-  .numbered {
-      list-style: none;
-  }
+/* Main container */
+.kisan-care {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.kisan-care header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Heading */
+.kisan-care h1 {
+  font-size: 2.3rem;
+  color: #283618;
+}
+
+/* Paragraphs */
+.kisan-care p {
+  color: #283618;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Form container */
+.kisan-care-form {
+  text-align: center;
+  color: #283618;
+  font-size: 2rem;
+  width: 44vw;
+  height: 50vh;
+  padding: 2rem;
+  border: 0.1rem solid #283618;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Input field */
+.kisan-care-input {
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  margin-bottom: 10rem;
+}
+
+/* Button */
+.kisan-care-button {
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  border: 0.1rem #283618 solid;
+  background-color: #eff6e0;
+  color: #283618;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.kisan-care-button:hover {
+  background-color: #283618;
+  color: #eff6e0;
+}
+
+/* Response section */
+.kisan-care-response {
+  margin-top: 20px;
+}
+
+/* Response paragraph */
+.response-paragraph {
+  font-size: 1rem;
+  color: #283618;
+  margin-bottom: 10px;
+}
+
+/* Ordered list in the response */
+.response-ordered-list {
+  margin-bottom: 10px;
+}
+
+/* List items in the response */
+.response-ordered-list li {
+  list-style-type: decimal;
+  margin-left: 20px;
+}

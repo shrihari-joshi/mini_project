@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Fertilizer from './Fertilizer/Fertilizers';
-import Pesticide from './Pesticide/Pesticides';
-
+import Fertilizer from './Fertilizer/Fertilizers/Fertilizers';
+import Pesticide from './Pesticide/Pesticides/Pesticides';
+import './Plant_Nutrition.css';
 const Plant_Nutrition = () => {
     const [tab, setTab] = useState('fertilizer');
 
@@ -10,11 +10,16 @@ const Plant_Nutrition = () => {
     };
 
     return (
-        <div>
-            <h2>Plant Nutrition</h2>
-            <button onClick={toggleTab}>Fertilizers</button>
-            <button onClick={toggleTab}>Pesticides</button>
-            {tab === 'fertilizer' ? <Fertilizer /> : <Pesticide />}
+        <div className='butcontain'>
+            <div>
+
+            <button className='plantbut' onClick={toggleTab}>Fertilizers</button>
+            <button className='plantbut' onClick={toggleTab}>Pesticides</button>
+            </div>
+            <div className='present'>
+                {tab === 'fertilizer' ? <Fertilizer /> : <Pesticide />}
+
+            </div>
         </div>
     );
 };

@@ -1,0 +1,14 @@
+.pesti{
+    color: #283618;
+    font-size: 3.1rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+.pesticidemain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+

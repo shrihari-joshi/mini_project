@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './WeatherForecast.css'; // Changed CSS file name to match convention
 
 const formatResponse = (response) => {
     const paragraphs = response.split("\n\n");
@@ -12,14 +13,14 @@ const formatResponse = (response) => {
             {lines.map((line, idx) => {
                 if (idx % 2 === 0) {
                 return (
-                    <p key={idx} className="normal">
+                    <p key={idx} className="weather-normal"> 
                         {line}
                     </p>
                 );
                 } else {
                 const numberedLines = line.split(/\*\*(\d+)\. /).filter(Boolean);
                 return (
-                    <ol key={idx} className="numbered">
+                    <ol key={idx} className="weather-numbered"> 
                         {numberedLines.map((numberedLine, index) => (
                             <li key={index}>{numberedLine}</li>
                         ))}
@@ -64,39 +65,41 @@ const WeatherForecast = () => {
     };
 
     return (
-        <div>
+        <div className="weather-forecast"> 
             {
                 !user ? 
                     <h2>Kindly login to use this feature</h2>
                 : (
                     <>
                         <h2>Weather Forecast</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div>
-                                <label htmlFor="seedName">Seed Name:</label>
+                        <form onSubmit={handleSubmit} className="weather-form"> 
+                            <div className="input-group"> 
+                                <label htmlFor="seedName" className="label">Name of Seed:</label> 
                                 <input
                                     type="text"
                                     id="seedName"
                                     value={seedName}
                                     onChange={(e) => setSeedName(e.target.value)}
+                                    className="input" 
                                 />
                             </div>
-                            <div>
-                                <label htmlFor="date">Date:</label>
+                            <div className="input-group"> 
+                                <label htmlFor="date" className="label">Date of Plantation:</label> 
                                 <input
                                     type="date"
                                     id="date"
                                     value={date}
                                     onChange={(e) => setDate(e.target.value)}
+                                    className="input" 
                                 />
                             </div>
-                            <div>
-                                <p>Get the solution for another soil type other than {user.soilType}</p>
-                                <label htmlFor="soilType">Soil Type:</label>
+                            <div className="input-group"> 
+                                <label htmlFor="soilType" className="label">Type of Soil:</label> 
                                 <select
                                     id="soilType"
                                     value={soilType}
                                     onChange={(e) => setSoilType(e.target.value)}
+                                    className="input" 
                                 >
                                     <option value="">Select Soil Type</option>
                                     <option value="Alluvial">Alluvial</option>
@@ -107,12 +110,13 @@ const WeatherForecast = () => {
                                     <option value="Forest and Mountain">Forest and Mountain</option>
                                     {/* Add more options as needed */}
                                 </select>
+                                {/* <p className="subtext">Get the solution for another soil type other than {user.soilType}</p>  */}
                             </div>
-                            <button type="submit">Generate Solution</button>
                         </form>
-                        {loading && <p>Generating content...</p>}
-                        {result && <p>{formatResponse(result)}</p>}
-                        {error && <p>{error}</p>}
+                            <button type="submit" className="buttonsol">Generate Solution</button> 
+                        {loading && <p>Loading...</p>} 
+                        {result && <div className="response">{formatResponse(result)}</div>} 
+                        {error && <p className="error">{error}</p>} 
                     </>
                 )
             }

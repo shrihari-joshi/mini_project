@@ -81,7 +81,7 @@ const Seeds = () => {
             <ul className='products'>
                 {seeds.map((seed, index) => (
                     <li key={index}>
-                        <div>
+                        <div> 
                             <SeedProduct
                                 seed={seed}
                                 addToCart={addToCart}

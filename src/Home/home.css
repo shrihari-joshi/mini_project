@@ -2,6 +2,10 @@
     background-color: #eff6e0;
 }
 .mainbase{
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
+    color: #283618;
+    /* margin-top: 20vh; */
+    margin-bottom: -70vh;
+    
 }

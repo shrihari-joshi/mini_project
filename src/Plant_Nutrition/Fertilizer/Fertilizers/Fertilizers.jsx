@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import FertilizerItem from './FerilizerItem';
+import FertilizerItem from '../FertilizerItem/FerilizerItem';
+import './Fertilizers.css'
 
 const Fertilizer = () => {
     const [fertilizers, setFertilizers] = useState([]);
@@ -68,9 +69,9 @@ const Fertilizer = () => {
     };
 
     return (
-        <div>
-            <div className='mainbase'>
-                <p className='base'>Welcome to Fertilizers</p>
+        <div className='mainclass'>
+            <div className='texthead'>
+                <p>Nourish Your Plants</p>
             </div>
             <ul>
                 {fertilizers.map((fertilizer, index) => (

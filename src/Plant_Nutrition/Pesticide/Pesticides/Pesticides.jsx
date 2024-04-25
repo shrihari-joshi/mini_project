@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PesticideItem from './PesticideItem';
+import PesticideItem from '../PesticideItem/PesticideItem';
+import './Pesticides.css'
 
 const Pesticide = () => {
     const [pesticides, setPesticides] = useState([]);
@@ -69,11 +70,11 @@ const Pesticide = () => {
     };
 
     return (
-        <div>
-            <div className='mainbase'>
-                <p className='base'>Welcome to Pesticides</p>
+        <div className='pesticidemain'> 
+            <div className='pesti'>
+                <p>Protect Your Plants</p>
             </div>
-            <ul>
+            <ul className='arrange_pesti'>
                 {pesticides.map((pesticide, index) => (
                     <li key={index}>
                         <PesticideItem

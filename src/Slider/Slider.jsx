@@ -26,6 +26,11 @@ const ImageSlider = () => {
       </div>
     </div>
     
+    {/* <div className="imagediv">
+      <div>
+        <img src="image3.jpeg" alt="3" />
+      </div>
+    </div> */}
       
     </Slider>
   );
