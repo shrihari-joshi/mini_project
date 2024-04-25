@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from '../Home/Home';
 import SeedProduct from './SeedProduct';
+// import SeedSellingPage from './SeedSellingPage';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);

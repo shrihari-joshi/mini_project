@@ -8,8 +8,7 @@ const PesticideItem = ({ item , quantity, removeFromCart}) => {
             <p>Quantity: {quantity}</p>
             <p>Total : {item.price * quantity}</p>
             <p>Discription: {item.discription}</p>
-            <button onClick={removeFromCart(item.name)}>Remove</button>
-
+            <button onClick={() => removeFromCart(item.name)}>Remove</button>
         </div>
     );
 };

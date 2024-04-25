@@ -129,7 +129,7 @@ const Cart = () => {
                         </>
                     )}
                     <h2>Total Price : {cartTotal}</h2>
-                    <button onClick={clearCart}>Clear Cart</button>
+                    <button onClick={() => clearCart()}>Clear Cart</button>
                     <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
 
                     {/* <div>
@@ -138,6 +138,7 @@ const Cart = () => {
                 </>
             )}
         </div>
+        
     );
     
 };

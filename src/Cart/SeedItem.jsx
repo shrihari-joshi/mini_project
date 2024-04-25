@@ -8,7 +8,7 @@ const SeedItem = ({ item, quantity, removeFromCart}) => {
             <p>Price: {item.price}</p>
             <p>Quantity: {quantity}</p>
             <p>Total: {item.price * quantity}</p>
-            <button onClick={removeFromCart(item.name)}>Remove</button>
+            <button onClick={() => removeFromCart(item.name)}>Remove</button>
         </div>
     );
 };

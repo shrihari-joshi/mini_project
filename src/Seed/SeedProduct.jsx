@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Seed.css'; 
+import './Seed.css'; // Import CSS file
 
 const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
-    const [addressConfirmed, setAddressConfirmed] = useState(false);
+    const [addressConfirmed, setAddressConfirmed] = useState(true);
 
     const handleQuantityChange = (e) => {
         setSelectedQuantity(Number(e.target.value));
