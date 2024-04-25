@@ -31,52 +31,48 @@ const Cart = () => {
                 console.error('User data not found in localStorage');
                 return;
             }
-            setTimeout(async () => {
-                const response = await axios.get('http://localhost:3500/getCart', {
-                    params: {
-                        username: user.username
-                    }
-                });
-                if (response.status === 200 && response.data.length > 0) {
-                    setCart(response.data);
-                    console.log(response.data);
-                } else {
-                    console.error('Cart data not found or empty');
+            setIsLoading(true)
+            const response = await axios.get('http://localhost:3500/getCart', {
+                params: {
+                    username: user.username
                 }
-
-                const totalResponse = await axios.get('http://localhost:3500/getCartTotal', {
-                    params: {
-                        username: user.username
-                    }
-                });
-
-                if (totalResponse.status === 200 && totalResponse.data) {
-                    setCartTotal(totalResponse.data);
-                    console.log(totalResponse.data);
-                } else {
-                    console.error('Cart total not found');
+            });
+            setCart(response.data)
+            console.log(response);
+            if (response.status !== 200) {
+                notifyError('Cannot get cart')
+            }
+            const totalResponse = await axios.get('http://localhost:3500/getCartTotal', {
+                params: {
+                    username: user.username
                 }
-                setIsLoading(false); // Set loading state to false after data is fetched
-            }, 1000); 
-
-        } catch (error) {
+            });
+            if (totalResponse.status !== 200) {
+                notifyError('Cannot get cart total')
+            }
+            setCartTotal(totalResponse.data)
+            setIsLoading(false); // Set loading state to false after data is fetched
+        } 
+         catch (error) {
             console.error('Error fetching cart:', error.response);
+            notifyError('Error in getting cart')
             setIsLoading(false);
         }
     };
 
     const removeFromCart = async (name) => {
         try {
-            console.log('function called');
             await axios.delete('http://localhost:3500/removeFromCart', {
                 data : {
                     username: user.username,
                     name : name
                 }
             });
+            notifySuccess(`${name} removed from cart`)
             fetchCart(); // Refresh cart after removing item
         } catch (error) {
             console.error('Error removing item from cart:', error.response);
+            notifyError('Error ' , name , ' while removing from cart')
         }
     };
 
@@ -92,6 +88,7 @@ const Cart = () => {
             fetchCart(); // Refresh cart after clearing
         } catch (error) {
             console.error('Error clearing cart:', error.response);
+            notifyError('Error while clearing cart')
         }
     };
 
@@ -131,10 +128,6 @@ const Cart = () => {
                     <h2>Total Price : {cartTotal}</h2>
                     <button onClick={() => clearCart()}>Clear Cart</button>
                     <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
-
-                    {/* <div>
-                        <Checkout/>
-                    </div> */}
                 </>
             )}
         </div>

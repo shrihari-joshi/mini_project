@@ -25,7 +25,6 @@ const Register = () => {
 
     const isPassMatch = (pass, rePass) => {
         if (pass !== rePass) {
-            notifyWarning('Password did not matched')
             setPass('');
             setRetypePass('');
             return false;
@@ -37,11 +36,11 @@ const Register = () => {
         e.preventDefault();
         
         if (!username || !email || !pass){
-            notifyWarning('All fields are mandatory!');
             return;
         }
         
         if (!isPassMatch(pass, retypePass)){
+            notifyWarning('Password and confirm password should be same')
             return;
         }
 
@@ -57,14 +56,8 @@ const Register = () => {
         try {
             setLoading(true);
             const response = await axios.post('http://localhost:3500/register', user);
-
-                if (response.data) {
-                    notifySuccess(`${user.username} has been registered`)
-                }
-                else {
-                    notifyError("Couldn't register user");
-                }
-                console.log(`${user.username} is created`);
+                notifySuccess(`${user.username} has been registered`)
+                console.log(response + '\nregistered');
                 setUsername('');
                 setEmail('');
                 setPass('');
