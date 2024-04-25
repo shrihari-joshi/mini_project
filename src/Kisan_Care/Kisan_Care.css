@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Main container */
 .kisan-care {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   padding: 2rem;
   align-items: center;
@@ -10,9 +12,12 @@
 }
 
 /* Header */
-.kisan-care header {
+.kisan-care header h1{
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  font-size: 31px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Heading */
@@ -26,16 +31,17 @@
   color: #283618;
   margin-bottom: 1rem;
   margin-left: 1rem;
-  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
 }
 
 /* Form container */
 .kisan-care-form {
   text-align: center;
   color: #283618;
-  font-size: 2rem;
-  width: 44vw;
-  height: 50vh;
+  font-size: 1rem;
+  max-width: 500vw;
+  max-height: 170px;
   padding: 2rem;
   border: 0.1rem solid #283618;
   border-radius: 0.5rem;
@@ -46,23 +52,27 @@
 .kisan-care-input {
   padding: 1rem;
   width: 100%;
+  background-color: transparent;
+  font-size: 0.9rem;
   border: none;
+  outline: 0.5px solid #283618;
   border-radius: 0.3rem;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 10rem;
 }
 
 /* Button */
 .kisan-care-button {
-  padding: 1rem 1rem;
+  padding: 0.8rem 1.8rem; 
   border: none;
-  border-radius: 0.3rem;
-  border: 0.1rem #283618 solid;
+  border-radius: 0.4rem; 
   background-color: #eff6e0;
-  color: #283618;
-  font-size: 1.3rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  color: #283618;
+  border: 2px solid #283618;
 }
 
 .kisan-care-button:hover {
@@ -72,7 +82,10 @@
 
 /* Response section */
 .kisan-care-response {
-  margin-top: 20px;
+  text-align: start;
+  margin-top: 1rem;
+  border: 0.1rem solid #283618;
+  border-radius: 0.5rem;
 }
 
 /* Response paragraph */
@@ -89,6 +102,9 @@
 
 /* List items in the response */
 .response-ordered-list li {
-  list-style-type: decimal;
-  margin-left: 20px;
+  /* list-style-type: decimal; */
+  margin-left: 17px;
+}
+ol{
+  list-style-type: none;
 }

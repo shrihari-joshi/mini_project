@@ -76,13 +76,13 @@ const Wishlist = () => {
     }, []);
 
     return (
-        <div style={{ marginLeft: "300px", marginTop: "30px" }}>
+        <div className="main">
             <h1>Wishlist</h1>
             {user ? (
                 isLoading ? (
                     <p>Loading wishlist...</p>
                 ) : wishlist.length > 0 ? (
-                    <ul>
+                    <ul className="item-container">
                         {wishlist.map((wishListItem, index) => (
                             wishListItem.type === 'seed' ? (
                                 <SeedItem key={index} item={wishListItem} quantity={wishListItem.quantity} removeFromWishlist={removeFromWishlist}/>
@@ -92,13 +92,13 @@ const Wishlist = () => {
                                 <PesticideItem key={index} item={wishListItem} quantity={wishListItem.quantity} removeFromWishlist={removeFromWishlist}/>
                             )
                         ))}
-                        <button onClick={clearWishlist}>clear wishlist</button>
+                        <button className="clearCart" onClick={clearWishlist}>Clear Wishlist</button>
                     </ul>
                 ) : (
-                    <p>No items in wishlist</p>
+                    <p className="empty">No Items in The Wishlist  :(</p>
                 )
             ) : (
-                <h2>Kindly Sign up to see wishlist</h2>
+                <h2>Kindly Sign up To See The Wishlist</h2>
             )}
         </div>
     );

@@ -11,9 +11,9 @@ const PesticideItem = ({ pesticide, addToCart, addToWishList }) => {
     return (
         <div className="pesticide-product">
             <h3 className="pesticide-product-name">{pesticide.name}</h3>
-            <p className="pesticide-product-price">Price: {pesticide.price}</p>
+            <p className="pesticide-product-price"><strong>Price: </strong>₹ {pesticide.price}</p>
             <p className="pesticide-product-desc">{pesticide.disc}</p>
-            <p className="pesticide-product-weight">Weight: {pesticide.weight}</p>
+            <p className="pesticide-product-weight"><strong>Weight: </strong>{pesticide.weight} kg</p>
             <input
                 type="number"
                 min="1"

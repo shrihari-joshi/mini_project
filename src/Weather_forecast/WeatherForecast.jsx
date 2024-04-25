@@ -74,7 +74,7 @@ const WeatherForecast = () => {
                         <h2>Weather Forecast</h2>
                         <form onSubmit={handleSubmit} className="weather-form"> 
                             <div className="input-group"> 
-                                <label htmlFor="seedName" className="label">Name of Seed:</label> 
+                                <label htmlFor="seedName" className="label">Name of the Seed:</label> 
                                 <input
                                     type="text"
                                     id="seedName"
@@ -102,9 +102,9 @@ const WeatherForecast = () => {
                                     className="input" 
                                 >
                                     <option value="">Select Soil Type</option>
-                                    <option value="Alluvial">Alluvial</option>
+                                    <option value="Alluvial" onfocus='this.size=10;' onblur='this.size=0;' onchange='this.size=1; this.blur();'>Alluvial</option>
                                     <option value="Black">Black</option>
-                                    <option value="Red and Yellow">Red and Yello</option>
+                                    <option value="Red and Yellow">Red and Yellow</option>
                                     <option value="Laterite">Laterite</option>
                                     <option value="Arid">Arid</option>
                                     <option value="Forest and Mountain">Forest and Mountain</option>

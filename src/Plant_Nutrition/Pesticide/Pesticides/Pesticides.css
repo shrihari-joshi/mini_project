@@ -1,9 +1,19 @@
 .pesti{
+    text-align: center;
+    margin-top: 6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
     color: #283618;
-    font-size: 3.1rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    align-items: center;
+}
+.arrange_pesti{
+    display: flex;
+    max-width: 2000px;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    list-style-type: none;
 }
 .pesticidemain{
     display: flex;

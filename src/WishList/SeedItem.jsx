@@ -2,11 +2,15 @@ import React from 'react';
 
 const SeedItem = ({ item, removeFromWishlist }) => {
     return (
-        <div>
-            <h3>{item.name}</h3>
-            <p>Seed Type: {item.seedType}</p>
-            <p>Price: {item.price}</p>
-            <button onClick={() => removeFromWishlist(item.name, 'seed')}></button>
+        <div className='item-card'>
+            <h3 className='item-name'>{item.name}</h3>
+            <div className="specs">
+                <p><b>Seed Type: </b>{item.seedType}</p>
+                <p><b>Price: </b>₹{item.price}</p>
+            </div>
+            <div className="buttonContainer">
+                <button className="removeBtn" onClick={() => removeFromWishlist(item.name, 'seed')}>Remove</button>
+            </div>
         </div>
     );
 };
