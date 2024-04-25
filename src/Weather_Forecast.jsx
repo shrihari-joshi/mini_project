@@ -4,7 +4,7 @@ import Home from './Home/Home'
 const Weather_Forecast = () => {
     return (
         <div>
-            <Home/> 
+            <p>Weather Forecast</p>
         </div>
     )
 }

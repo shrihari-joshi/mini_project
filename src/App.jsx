@@ -21,6 +21,7 @@ import { FaHeart } from "react-icons/fa";
 import { PiSignInBold } from "react-icons/pi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdPowerSettingsNew } from "react-icons/md";
+import ImageSlider from './Slider/Slider';
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,10 @@ function App() {
                             </div>
                         </div>
                         <div className="horizontal-line"></div>
+                    </div>
+                    <div>
+                        {/* <p>Image Slider</p> */}
+                        {/* <ImageSlider/> */}
                     </div>
                 </div>
 
