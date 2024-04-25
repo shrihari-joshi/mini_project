@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './Login.css';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
+    const notifyError = (msg) => toast.error(msg, { position: 'top-center' });
     const navigate = useNavigate();
 
     const logIn = async (e) => {
@@ -23,9 +26,13 @@ const Login = () => {
             if (response){
                 localStorage.setItem('currentUser', JSON.stringify(response.data));
             }
+            else {
+                notifyError('Could not log in')
+            }
             console.log(`${username} logged In`);
             navigate('/');
         } catch (error) {
+            notifyError(error.message)
             console.log(error);
         }
     };
@@ -56,7 +63,8 @@ const Login = () => {
                     <button className='loginbutton' type='submit' >Log in</button>
                 </div>
                 </form>
-                
+                <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
+
             </div>
         
     );

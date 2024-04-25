@@ -8,23 +8,6 @@ const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) =
     const handleQuantityChange = (e) => {
         setSelectedQuantity(Number(e.target.value));
     };
-
-    // const inc = () => {
-    //     let input = document.getElementsByClassName('myNumber');
-    //     let value = parseInt(input.value, 10);
-    //     value = isNaN(value) ? 0 : value;
-    //     value++;
-    //     input.value = value;
-    // };
-
-    // const dec = () => {
-    //     let input = document.getElementsByClassName('myNumber');
-    //     let value = parseInt(input.value, 10);
-    //     value = isNaN(value) ? 0 : value;
-    //     value--;
-    //     input.value = value;
-    // };
-    
     
     return (
         <div className="seed-container">
@@ -35,21 +18,6 @@ const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) =
             <p className="seed-distributor">
                 <strong>Distributed by:</strong> {seed.distributer ? seed.distributer : ' No distributor added'}
             </p>
-            {/* <div class="quantity">
-                <div className="symbol minus" onClick={dec}>
-                    <p className="operators">-</p>
-                </div>
-                <input 
-                type="number" 
-                min="1" 
-                value={selectedQuantity}
-                onChange={handleQuantityChange}
-                className="myNumber seed-quantity"
-                />
-                <div className="symbol plus" onClick={inc}>
-                    <p className="operators">+</p>
-                </div>
-            </div> */}
             <input
                 type="number"
                 min="1"
@@ -59,10 +27,8 @@ const SeedProduct = ({ seed, addToCart, addToWishList, handleConfirmAddress }) =
             />
             <div className="btn-container">
             <button onClick={() => addToCart(seed, selectedQuantity)} className="seed-btn">Add To Cart</button>
-            {/* <button onClick={() => buySeeds(seed)} className="seed-btn">Buy</button> */}
             <button onClick={() => addToWishList(seed)} className="seed-btn">Add to Wishlist</button>
             </div>
-            {/* <button onClick={buySeeds} className="seed-btn">Buy</button> */}
         </div>
     );
 };

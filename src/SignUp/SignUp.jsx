@@ -3,7 +3,7 @@ import Login from "./Login";
 import Register from "./Register";
 import './SignUp.css'; // Import the CSS file
 
-const SignUp = ({ users, setUsers }) => {
+const SignUp = () => {
     const [state, setState] = useState('login');
     
     const toggleState = () => {
