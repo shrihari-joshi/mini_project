@@ -11,14 +11,12 @@ const Plant_Nutrition = () => {
 
     return (
         <div className='butcontain'>
-            <div>
-
-            <button className='plantbut' onClick={toggleTab}>Fertilizers</button>
-            <button className='plantbut' onClick={toggleTab}>Pesticides</button>
-            </div>
             <div className='present'>
                 {tab === 'fertilizer' ? <Fertilizer /> : <Pesticide />}
-
+            </div>
+            <div>
+                <button className='plantbut' onClick={toggleTab}>Fertilizers</button>
+                <button className='plantbut' onClick={toggleTab}>Pesticides</button>
             </div>
         </div>
     );
