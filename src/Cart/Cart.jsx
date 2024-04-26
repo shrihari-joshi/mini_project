@@ -8,6 +8,7 @@ import Loading from "../Loading";
 import FertilizerItem from "./FertilizerItem.jsx";
 import SeedItem from "./SeedItem.jsx";
 import PesticideItem from "./PesicideItem.jsx";
+// import './cart.css'
 
 const Cart = () => {
     const [cart, setCart] = useState([]);
@@ -97,19 +98,22 @@ const Cart = () => {
     }, []);
 
     return (
-        <div style={{ marginLeft: "300px" }}>
+        <div className="main">
             {!user ? (
                 <h2>Kindly Sign Up to see cart</h2>
             ) : (
                 <>
-                    <h1>Cart : {user?.username}</h1>
+                    <h1>Welcome To Cart</h1>
+                    <h4>You Are Just A Step Away..</h4>
+                    <h3 className="smthng">Hey, {user?.username}. Here's Your Bag.</h3>
                     {isLoading ? (
+                        <div className="loading">
                         <Loading />
-                    ) : (
+                </div> ) : (
                         <>
                             <h2>Total Items : {cart?.length || 0}</h2>
                             {cart?.length > 0 ? (
-                                <div>
+                                <div className="item-container">
                                     {cart.map((cartItem, index) => (
                                         cartItem.type === 'seed' ? (
                                             <SeedItem key={index} item={cartItem} quantity={cartItem.quantity} removeFromCart={removeFromCart}/>
@@ -121,12 +125,12 @@ const Cart = () => {
                                     ))}
                                 </div>
                             ) : (
-                                <p>No items in cart</p>
+                                <p className="empty">No items in cart  :(</p>
                             )}
                         </>
                     )}
-                    <h2>Total Price : {cartTotal}</h2>
-                    <button onClick={() => clearCart()}>Clear Cart</button>
+                    <h2>Total Price : ₹ {cartTotal}</h2>
+                    <button className='clearCart' onClick={() => clearCart()}>Clear Cart</button>
                     <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
                 </>
             )}

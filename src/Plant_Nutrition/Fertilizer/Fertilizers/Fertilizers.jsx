@@ -73,7 +73,7 @@ const Fertilizer = () => {
             <div className='texthead'>
                 <p>Nourish Your Plants</p>
             </div>
-            <ul>
+            <ul className="products">
                 {fertilizers.map((fertilizer, index) => (
                     <li key={index}>
                         <FertilizerItem

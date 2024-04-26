@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FertilizerItem.css';
 
 const FertilizerItem = ({ fertilizer, addToCart, addToWishList }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -10,9 +11,9 @@ const FertilizerItem = ({ fertilizer, addToCart, addToWishList }) => {
     return (
         <div className="fertilizer-container">
             <h3 className="fertilizer-name">{fertilizer.name}</h3>
-            <p className="fertilizer-price">Price: {fertilizer.price}</p>
+            <p className="fertilizer-price"><strong>Price: </strong>₹ {fertilizer.price}</p>
             <p className="fertilizer-desc">{fertilizer.disc}</p>
-            <p className="fertilizer-weight">Weight: {fertilizer.weight}</p>
+            <p className="fertilizer-weight"><strong>Weight: </strong>{fertilizer.weight} kg</p>
             <input
                 type="number"
                 min="1"

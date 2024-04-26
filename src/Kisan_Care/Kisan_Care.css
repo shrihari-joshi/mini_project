@@ -6,22 +6,12 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-top: -2rem;
   flex-direction: column;
 }
-
-/* Header */
-
-
-
-/* Heading */
-.kisan-care h1 {
-  font-size: 2.5rem;
-  color: #283618;
-  font-weight: 600;
+.aititle{
   margin-bottom: 2rem;
-  margin-top: -0.8rem;
 }
-
 /* Paragraphs */
 .kisan-care p {
   color: #283618;
@@ -29,6 +19,7 @@
   margin-left: 1rem;
   font-size: 1.3rem;
 }
+
 
 /* Form container */
 .kisan-care-form {
