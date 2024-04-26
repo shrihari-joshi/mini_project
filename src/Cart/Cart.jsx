@@ -54,8 +54,8 @@ const Cart = () => {
             setIsLoading(false); // Set loading state to false after data is fetched
         } 
          catch (error) {
-            console.error('Error fetching cart:', error.response);
-            notifyError('Error in getting cart')
+            console.log('Error fetching cart:', error);
+            notifyError(error.message)
             setIsLoading(false);
         }
     };
