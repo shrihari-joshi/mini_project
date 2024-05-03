@@ -31,8 +31,8 @@ const Login = () => {
                 notifyError('Could not log in')
             }
             console.log(`${username} logged In`);
-            window.location.reload()
             navigate('/');
+            window.location.reload()
         } catch (error) {
             notifyError('Couldn\'t login')
             console.log(error);

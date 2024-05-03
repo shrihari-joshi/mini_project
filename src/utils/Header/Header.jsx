@@ -23,7 +23,7 @@ const Header = () => {
             <div className='body'>
                 <div style={{ display: "flex" }}>
                     <div className='head'>
-                        <Link to='/home'>
+                        <Link to='/'>
                             <img src="icon.jpg" alt="Description of the image" className='title' />
                         </Link>
                     </div>
