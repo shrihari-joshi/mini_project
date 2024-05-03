@@ -71,9 +71,6 @@ const Pesticide = () => {
 
     return (
         <div className='pesticidemain'> 
-            <div className='pesti'>
-                <p>Protect Your Plants</p>
-            </div>
             <ul className='arrange_pesti'>
                 {pesticides.map((pesticide, index) => (
                     <li key={index}>

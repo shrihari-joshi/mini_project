@@ -116,7 +116,38 @@
       padding-left: 1rem;
       margin-left: 1rem;
       padding-top: 2.2%;
-    
       cursor: pointer;
       font-size: 1.8rem;
+      
+      
+    }
+    .dropdown{
+      width: 3vw;
+      height: 5vh;
+      font-size: 2rem;
+      display: flex;
+      margin-left: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .dropdown-logout-logo{
+      width: 100%;
+      height: 100%;
+      font-size: 2.8rem;
+      margin-left: -5rem;
+    }
+    .dropdown-content{
+      font-size: 0.8rem;
+      margin-top: 0rem;
+      margin-left: -2rem;
+      font-weight: 600;
+      padding: 0.5rem;
+    }
+    .dropdown-button{
+      margin-right: -1rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0.4rem;
     }

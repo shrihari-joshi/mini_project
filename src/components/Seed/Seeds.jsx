@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from '../../utils/Home/Home';
 import SeedProduct from './SeedProduct';
 // import SeedSellingPage from './SeedSellingPage';
+import './Seeds.css';
 
 const Seeds = () => {
     const [seeds, setSeeds] = useState([]);
@@ -74,7 +75,7 @@ const Seeds = () => {
     };
 
     return (
-        <div>
+        <div className='seed-main'>
             <div className='mainbase'>
                 <p className='base'>Discover Your Seed Sanctuary</p>
             </div>

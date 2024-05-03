@@ -1,6 +1,7 @@
 /* Main container */
 .kisan-care {
   max-width: 800px;
+  height: 90vh;
   margin: auto;
   padding: 2rem;
   align-items: center;
@@ -8,9 +9,11 @@
   display: flex;
   margin-top: -2rem;
   flex-direction: column;
+  overflow-y: hidden;
 }
 .aititle{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: -6rem;
 }
 /* Paragraphs */
 .kisan-care p {

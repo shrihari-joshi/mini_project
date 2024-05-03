@@ -2,38 +2,31 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./Slider.css"; // Create this file for custom styles
 
-const ImageSlider = () => {
-  const settings = {
+const ImageSlider = ({ images }) => {
+  const settings = {    
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   return (
-    <Slider {...settings}>
-    <div className="imagediv">
-      <div>
-        <img src="image2.jpeg" alt="1" />
-      </div>
+    <div className="image-slider">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`Slide ${index}`} />
+          </div>
+        ))}
+      </Slider>
     </div>
-
-    <div className="imagediv">
-      <div>
-        <img src="icon.jpg" alt="2" />
-      </div>
-    </div>
-    
-    {/* <div className="imagediv">
-      <div>
-        <img src="image3.jpeg" alt="3" />
-      </div>
-    </div> */}
-      
-    </Slider>
   );
 };
 
-export default ImageSlider;
+export default ImageSlider; 

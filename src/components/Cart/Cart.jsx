@@ -8,7 +8,6 @@ import Loading from '../../utils/Loading.jsx'
 import FertilizerItem from "./FertilizerItem.jsx";
 import SeedItem from "./SeedItem.jsx";
 import PesticideItem from "./PesicideItem.jsx";
-import PlaceOrder from "../../utils/PlaceOrder.jsx";
 // import './cart.css'
 
 const Cart = () => {
