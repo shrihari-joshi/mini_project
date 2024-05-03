@@ -20,7 +20,7 @@ function App() {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <main>
+            <main className='main-frame-spj'>
                 <Header/>
                 
                 <Routes>

@@ -71,6 +71,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 5px;
     font-size: 14px;
 }
+.quantity-controls{
+    display: flex;
+}
 
  /* Quantity button CSS */
 /* .quantity{

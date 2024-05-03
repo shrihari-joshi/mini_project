@@ -18,12 +18,20 @@ const Header = () => {
         window.location.reload(); 
     };
 
+    const handleMouseEnter = () => {
+        setShowDropdown(true);
+    };
+
+    const handleMouseLeave = () => {
+        setShowDropdown(false);
+    };
+
     return (
         <div className='container'>
             <div className='body'>
                 <div style={{ display: "flex" }}>
                     <div className='head'>
-                        <Link to='/home'>
+                        <Link to='/'>
                             <img src="icon.jpg" alt="Description of the image" className='title' />
                         </Link>
                     </div>
@@ -43,13 +51,13 @@ const Header = () => {
                             <FaHeart className='search' />
                         </Link>
                     </div>
-                    <div className="search1" id="login">
+                    <div className="search1" id="login" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         {user ? (
                             <div className="dropdown">
-                                <LogoutIcon className='search' title='Logout' onClick={() => setShowDropdown(!showDropdown)} />
+                                <LogoutIcon className='dropdown-logout-logo' title='Logout' />
                                 {showDropdown && (
                                     <div className="dropdown-content">
-                                        <button onClick={handleLogout}>Logout</button>
+                                        <button className='dropdown-button' onClick={handleLogout}>Logout</button>
                                     </div>
                                 )}
                             </div>

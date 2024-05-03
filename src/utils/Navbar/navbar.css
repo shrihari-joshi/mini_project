@@ -106,15 +106,15 @@ justify-content: flex-start;
   align-items:center; 
 }
 .search{
-  margin-top: 0.5rem;
+  margin-top: -0.5rem;
   color: #283618;
   width: 3rem;
 }
 .inputser {
   width: 20.5rem; 
   padding: 2.5%;
-  margin-left:7rem;
-  margin-top: 0.5rem; 
+  margin-left:3rem;
+  margin-top: -0.5rem; 
   border: 3px solid #283618;
   border-radius: 5px;
 }

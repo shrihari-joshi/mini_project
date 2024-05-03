@@ -5,8 +5,10 @@ const PesticideItem = ({ pesticide, addToCart, addToWishList }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     const handleQuantityChange = (e) => {
-        setSelectedQuantity(Number(e.target.value));
+        const value = Number(e.target.value);
+        setSelectedQuantity(value > 0 && Number.isInteger(value) ? value : 1);
     };
+    
     
     return (
         <div className="pesticide-product">
@@ -18,6 +20,7 @@ const PesticideItem = ({ pesticide, addToCart, addToWishList }) => {
             <input
                 type="number"
                 min="1"
+                max={10}
                 value={selectedQuantity}
                 onChange={handleQuantityChange}
                 className="pesticide-product-quantity"
