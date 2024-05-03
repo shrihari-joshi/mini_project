@@ -3,36 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './WeatherForecast.css'; // Changed CSS file name to match convention
 
-const formatResponse = (response) => {
-    const paragraphs = response.split("\n\n");
-    
-    return paragraphs.map((paragraph, index) => {
-        const lines = paragraph.split("");
-        return (
-            <div key={index}>
-            {lines.map((line, idx) => {
-                if (idx % 2 === 0) {
-                return (
-                    <p key={idx} className="weather-normal"> 
-                        {line}
-                    </p>
-                );
-                } else {
-                const numberedLines = line.split(/\\(\d+)\. /).filter(Boolean);
-                return (
-                    <ol key={idx} className="weather-numbered"> 
-                        {numberedLines.map((numberedLine, index) => (
-                            <li key={index}>{numberedLine}</li>
-                        ))}
-                    </ol>
-                );
-                }
-            })}
-            </div>
-        );
-    });
-};
-
 const WeatherForecast = () => {
     const [seedName, setSeedName] = useState('');
     const [date, setDate] = useState('');
@@ -43,6 +13,16 @@ const WeatherForecast = () => {
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('currentUser'));
     
+    const formatResponse = (response) => {
+        const paragraphs = response.split("\n\n");
+        
+        return paragraphs.map((paragraph, index) => {
+            const lines = paragraph.split("\n");
+            const formattedLines = lines.map(line => line.replace(/\*/g, ""));
+            return formattedLines.join(" ");
+        }).join("\n\n");
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         
