@@ -1,47 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 /* Main container */
 .kisan-care {
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
   padding: 2rem;
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-top: -2rem;
   flex-direction: column;
 }
-
-/* Header */
-.kisan-care header h1{
-  text-align: center;
-  margin-top: 2rem;
+.aititle{
   margin-bottom: 2rem;
-  font-size: 31px;
-  font-family: "Poppins", sans-serif;
 }
-
-/* Heading */
-.kisan-care h1 {
-  font-size: 2.3rem;
-  color: #283618;
-}
-
 /* Paragraphs */
 .kisan-care p {
   color: #283618;
   margin-bottom: 1rem;
   margin-left: 1rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
+
 
 /* Form container */
 .kisan-care-form {
   text-align: center;
   color: #283618;
-  font-size: 1rem;
-  max-width: 500vw;
-  max-height: 170px;
+  font-size: 2rem;
+  width: 44vw;
+  height: 50vh;
   padding: 2rem;
   border: 0.1rem solid #283618;
   border-radius: 0.5rem;
@@ -52,27 +38,23 @@
 .kisan-care-input {
   padding: 1rem;
   width: 100%;
-  background-color: transparent;
-  font-size: 0.9rem;
   border: none;
-  outline: 0.5px solid #283618;
   border-radius: 0.3rem;
-  font-family: "Poppins", sans-serif;
   margin-bottom: 10rem;
 }
 
 /* Button */
 .kisan-care-button {
-  padding: 0.8rem 1.8rem; 
+  padding: 1rem 1rem;
   border: none;
-  border-radius: 0.4rem; 
+  border-radius: 0.3rem;
+  border: 0.1rem #283618 solid;
   background-color: #eff6e0;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
   color: #283618;
-  border: 2px solid #283618;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .kisan-care-button:hover {
@@ -82,10 +64,7 @@
 
 /* Response section */
 .kisan-care-response {
-  text-align: start;
-  margin-top: 1rem;
-  border: 0.1rem solid #283618;
-  border-radius: 0.5rem;
+  margin-top: 20px;
 }
 
 /* Response paragraph */
@@ -102,11 +81,8 @@
 
 /* List items in the response */
 .response-ordered-list li {
-  /* list-style-type: decimal; */
-  margin-left: 17px;
-}
-ol{
-  list-style-type: none;
+  list-style-type: decimal;
+  margin-left: 20px;
 }
 .kisan-care-button.disabled {
   cursor: not-allowed;

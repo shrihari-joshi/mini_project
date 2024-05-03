@@ -66,9 +66,11 @@ function KisanCare() { // Changed function name to camelCase
     console.log(mutation);
     return (
         <div className="kisan-care"> 
-            <header>
-                <h1>Ask our AI about your crops and fertilizers</h1>
-            </header>
+            <div className='aititle'>
+
+                <h1>Ask our AI</h1>
+            </div>
+            
             <form className="kisan-care-form" onSubmit={submitHandler}> 
                 <p>Enter a prompt and let our AI craft a unique solution for your problem.</p>
                 <label htmlFor="Enter your prompt:"></label>

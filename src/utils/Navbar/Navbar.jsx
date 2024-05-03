@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
-import { Route, Routes, Link, useLocation } from 'react-router-dom'
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
 
-
 const Navbar = () => {
-    
+    const location = useLocation();
+
     return (
-        
         <div className="left-navbar">
             <ul className='navbar'>
-                <li className='border'><Link to='/seeds'>Seeds</Link></li>
-                <li className='border'><Link to='/weather-forecast'>Weather Forecast</Link></li>
-                <li className='border'><Link to='/plant-nutrition'>Plant Nutrition</Link></li>
-                <li className='border'><Link to='/kisan-care'>Kisan Care</Link></li>
+                <NavItem to="/seeds" currentPath={location.pathname}>Seeds</NavItem>
+                <NavItem to="/weather-forecast" currentPath={location.pathname}>Weather Forecast</NavItem>
+                <NavItem to="/plant-nutrition" currentPath={location.pathname}>Plant Nutrition</NavItem>
+                <NavItem to="/kisan-care" currentPath={location.pathname}>Kisan Care</NavItem>
             </ul>
-                
         </div>
-    )
-}
+    );
+};
 
-export default Navbar
+const NavItem = ({ to, currentPath, children }) => {
+    const isActive = to === currentPath;
+    return (
+        <li className={`border ${isActive ? 'active' : ''}`}>
+            <Link to={to}>{children}</Link>
+        </li>
+    );
+};
+
+export default Navbar;

@@ -13,6 +13,7 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 .head{
   /* width: 50%; */
   white-space: nowrap;
+  margin-right: 0;
   margin-top: 1%;
   margin-left: 1%;
   transition: 1.3s ease;
@@ -41,13 +42,15 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 .navbar {
   list-style: none;
   padding: 0;
-  margin-top: 3.5%;
+  /* margin-top: 3.5%; */
   margin-right: 3rem;
   height: 100%;
+  background-color: transparent;
   /* width: 50.5vw; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: -1;
 }
 
 
@@ -60,30 +63,79 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   text-decoration:none;
   color: #283618;
   font-size: 1.3rem;
-  white-space:nowrap;
+  /* white-space:nowrap; */
   display: flex;
   transition: background-color 0.8s, color 0.8s;
   border-radius: 0.4rem;
-  padding: 0.5rem 0.8rem;
+  /* padding: 0.5rem 0.8rem; */
   font-weight: 600;
   justify-content: center;
   transition: 0.3s ease ;
   margin-right: 0.5rem;
-  
-
-  
 } 
 .navbar li a:hover {
   background-color: #283618; 
   color: #fefae0; 
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
 
+.navbar li.active a {
+  color: #eff6e0;
+  background-color: #283618;
   border-radius: 0.4rem;
   font-weight: 600;
   font-size: 1.3rem;
 }
 
 
-/*Horizontal Navbar*/
+/*Horizontal Navba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+r*/
 
 
 
@@ -147,7 +199,7 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
       white-space: nowrap;
       top: 0;
       left: 0;
-      margin-right: 68.5%;
+      /* margin-right: 68.5%; */
       margin-top: 0px;
       transition: 1.3s ease;
     }
@@ -254,7 +306,7 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 @media screen and (min-width: 468px) and (max-width: 768px) {
   .head {
     width: 100%;
-    margin-right: 30%;
+    /* margin-right: 30%; */
   }
 
   .title {
@@ -292,7 +344,7 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 @media screen and (min-width: 768px) and (max-width: 1150px) {
   .head {
     width: 100%;
-    margin-right: 55%;
+    /* margin-right: 55%; */
   }
 
   .title {
@@ -329,7 +381,7 @@ box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
 @media screen and (min-width: 1150px) and (max-width: 1450px) {
   .head {
     width: 100%;
-    margin-right: 65%;
+    /* margin-right: 65%; */
   }
 
   .title {
