@@ -26,8 +26,8 @@ justify-content: flex-start;
 .title{
   height: 10vh;
   margin-top: 0rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-left: 0rem;
   border-radius: 3rem;
   cursor: pointer;
   transition: 0.8s ease ;
@@ -68,12 +68,11 @@ justify-content: flex-start;
   font-size: 1.3rem;
   white-space:nowrap; 
   display: flex;
-  transition: background-color 0.8s, color 0.8s;
+  transition: background-color 0.5s, color 0.5s;
   border-radius: 0.4rem;
   padding: 0.5rem 0.8rem;
   font-weight: 600;
   justify-content: center;
-  transition: 0.3s ease ;
   margin-right: 0.5rem;
 } 
 .navbar li a:hover {
@@ -108,24 +107,20 @@ justify-content: flex-start;
 .search{
   margin-top: -0.5rem;
   color: #283618;
-  width: 3rem;
+  width: 2rem;
+  margin-left: -1rem;
 }
 .inputser {
   width: 20.5rem; 
   padding: 2.5%;
-  margin-left:3rem;
+  /* margin-left:3rem; */
   margin-top: -0.5rem; 
   border: 3px solid #283618;
   border-radius: 5px;
 }
 
 .search1 {
-  /* padding: 2%; */
-  width: 4vw;
-  padding-left: 1rem;
-  /* margin-left: 1rem; */
   padding-top: 2.0%;
-
   cursor: pointer;
   font-size: 1.9rem;
 }

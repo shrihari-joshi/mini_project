@@ -72,7 +72,7 @@ function KisanCare() { // Changed function name to camelCase
             </div>
             
             <form className="kisan-care-form" onSubmit={submitHandler}> 
-                <p>Enter a prompt and let our AI craft a unique solution for your problem.</p>
+                <p>Enter your problem and let AI craft a unique solution.</p>
                 <label htmlFor="Enter your prompt:"></label>
                 <input
                     type="text"

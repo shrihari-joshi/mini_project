@@ -12,6 +12,7 @@ import About from './utils/About/About';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/WishList/Wishlist';
 import Header from './utils/Header/Header';
+import ImagePrompt from './utils/ImagePrompt/ImagePrompt';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/signup" element={<SignUp />} />
+                    <Route path="/image-upload" element={<ImagePrompt />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/seeds" element={<Seeds />} />
