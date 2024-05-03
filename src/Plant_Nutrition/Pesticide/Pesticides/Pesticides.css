@@ -2,7 +2,7 @@
     text-align: center;
     margin-top: -0.5rem;
     font-weight: 600;
-
+    overflow-x: hidden;
     font-size: 2.5rem;
     color: #283618;
 }
@@ -14,11 +14,13 @@
     gap: 3rem;
     justify-content: center;
     list-style-type: none;
+    overflow-x: hidden;
 }
 .pesticidemain{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 

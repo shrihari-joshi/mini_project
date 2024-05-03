@@ -8,7 +8,7 @@ import Loading from "../Loading";
 import FertilizerItem from "./FertilizerItem.jsx";
 import SeedItem from "./SeedItem.jsx";
 import PesticideItem from "./PesicideItem.jsx";
-// import './cart.css'
+import './cart.css'
 
 const Cart = () => {
     const [cart, setCart] = useState([]);

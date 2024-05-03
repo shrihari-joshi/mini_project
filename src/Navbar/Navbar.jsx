@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ setSearchTerm }) => {
     const location = useLocation();
+    const [searchInput, setSearchInput] = useState('');
+
+    const handleSearchInputChange = (e) => {
+        setSearchInput(e.target.value);
+    };
+
+    const handleSearchSubmit = () => {
+        setSearchTerm(searchInput);
+    };
 
     return (
         <div className="left-navbar">

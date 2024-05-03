@@ -12,7 +12,6 @@ import Kisan_Care from './Kisan_Care/Kisan_Care';
 import About from './About/About';
 import Cart from './Cart/Cart';
 import Wishlist from './WishList/Wishlist';
-import Settings from './Settings';
 import Navbar from './Navbar/Navbar';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { FaCartPlus } from "react-icons/fa";
@@ -21,18 +20,18 @@ import { PiSignInBold } from "react-icons/pi";
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdPowerSettingsNew } from "react-icons/md";
 import ImageSlider from './Slider/Slider';
-
+import './Navbar/navbar.css'
 const queryClient = new QueryClient();
 
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <main>
+            <main className='main-frame-spj'>
                 <div className='container'>
                     <div className='body'>
                         <div style={{ display: "flex" }}>
                             <div className='head'>
-                                <Link to='/home'>
+                                <Link to='/'>
                                     <img src="icon.jpg" alt="Description of the image" className='title' />
                                 </Link>
                             </div>

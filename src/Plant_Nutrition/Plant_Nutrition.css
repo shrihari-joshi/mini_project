@@ -1,5 +1,7 @@
 /* plant_nutrition.css */
-
+/* *{
+    overflow-x: hidden;
+} */
 .butcontain {
     display: flex;
     justify-content: center;

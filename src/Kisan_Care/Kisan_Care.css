@@ -1,6 +1,7 @@
 /* Main container */
 .kisan-care {
   max-width: 800px;
+  height: 100vh;
   margin: auto;
   padding: 2rem;
   align-items: center;
@@ -11,6 +12,7 @@
 }
 .aititle{
   margin-bottom: 2rem;
+  margin-top: -10rem
 }
 /* Paragraphs */
 .kisan-care p {
@@ -47,6 +49,7 @@
 .kisan-care-button {
   padding: 1rem 1rem;
   border: none;
+  margin-top: 5rem;
   border-radius: 0.3rem;
   border: 0.1rem #283618 solid;
   background-color: #eff6e0;
@@ -83,4 +86,10 @@
 .response-ordered-list li {
   list-style-type: decimal;
   margin-left: 20px;
+}
+
+.kisan-care-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  /* Additional styles for disabled state */
 }

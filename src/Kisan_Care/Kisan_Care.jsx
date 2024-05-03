@@ -1,8 +1,8 @@
-import Home from '../Home/Home';
 import { useState } from "react";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import './Kisan_Care.css'; // Changed CSS file name to match convention
+// import translate from '../Translation'
 
 const makeRequestAPI = async (prompt) => {
     const res = await axios.post("http://localhost:3500/generate", { prompt });
@@ -11,22 +11,22 @@ const makeRequestAPI = async (prompt) => {
 
 const formatResponse = (response) => {
     const paragraphs = response.split("\n\n");
-  
+    
     return paragraphs.map((paragraph, index) => {
-        const lines = paragraph.split("**");
+        const lines = paragraph.split("");
         return (
             <div key={index}>
             {lines.map((line, idx) => {
                 if (idx % 2 === 0) {
                 return (
-                    <p key={idx} className="response-paragraph"> 
+                    <p key={idx} className="weather-normal"> 
                         {line}
                     </p>
                 );
                 } else {
-                const numberedLines = line.split(/\*\*(\d+)\. /).filter(Boolean);
+                const numberedLines = line.split(/\\(\d+)\. /).filter(Boolean);
                 return (
-                    <ol key={idx} className="response-ordered-list"> 
+                    <ol key={idx} className="weather-numbered list-type"> 
                         {numberedLines.map((numberedLine, index) => (
                             <li key={index}>{numberedLine}</li>
                         ))}
@@ -38,19 +38,31 @@ const formatResponse = (response) => {
         );
     });
 };
-  
+
 function KisanCare() { // Changed function name to camelCase
     const [prompt, setPrompt] = useState("");
+    const [isPromptEmpty, setIsPromptEmpty] = useState(true);
     //!mutation
     const mutation = useMutation({
         mutationFn: makeRequestAPI,
         mutationKey: ["gemini-ai-request"],
     });
+
     //!submit handler
     const submitHandler = (e) => {
         e.preventDefault();
-        mutation.mutate(prompt);
+        if (!isPromptEmpty) {
+            mutation.mutate(prompt);
+        }
     };
+
+    //!handle prompt change
+    const handlePromptChange = (e) => {
+        const inputValue = e.target.value;
+        setPrompt(inputValue);
+        setIsPromptEmpty(inputValue.trim().length === 0);
+    };
+
     console.log(mutation);
     return (
         <div className="kisan-care"> 
@@ -60,27 +72,33 @@ function KisanCare() { // Changed function name to camelCase
             </div>
             
             <form className="kisan-care-form" onSubmit={submitHandler}> 
-            <p>Enter a prompt and let our AI craft a unique solution for your problem.</p>
+                <p>Enter a prompt and let our AI craft a unique solution for your problem.</p>
                 <label htmlFor="Enter your prompt:"></label>
                 <input
                     type="text"
                     value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
+                    onChange={handlePromptChange}
                     placeholder="Write your problem here..."
                     className="kisan-care-input" 
                 />
-                
-                <section className="kisan-care-response"> 
+                    <section className="kisan-care-response"> 
                     {mutation.isPending && <p>Generating solution for your problem...</p>}
                     {mutation.isError && <p>Cannot fulfill your request for this time</p>}
                     {mutation.isSuccess && formatResponse(mutation.data)}
+                    {/* {mutation.isSuccess && formatResponse(translate(mutation.data))} */}
                 </section>
-            </form>
-            <button className="kisan-care-button" type="submit"> 
+
+                <button
+                    className={`kisan-care-button ${isPromptEmpty ? 'disabled' : ''}`}
+                    type="submit"
+                    disabled={isPromptEmpty}
+                >
                     Generate Solution
                 </button>
+            </form>
+                        
         </div>  
     );
 }
 
-export default KisanCare; // Changed export name to camelCase
+export default KisanCare; 
