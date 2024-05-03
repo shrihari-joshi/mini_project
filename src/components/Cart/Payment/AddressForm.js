@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -12,9 +13,36 @@ const FormGrid = styled(Grid)(() => ({
   flexDirection: 'column',
 }));
 
-export default function AddressForm() {
+const AddressForm = () => {
+  const user = JSON.stringify(localStorage.getItem('currentUser'))
+
+  const [formData, setFormData] = useState({
+    username: user.username,
+    address_line1: '',
+    address_line2: '',
+    city: '',
+    state: '',
+    postal_code: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3500/addaddress', formData);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error adding address:', error);
+    }
+  };
+
   return (
-    <Grid container spacing={3}>
+    <form onSubmit={handleSubmit}>
+        <Grid container spacing={3}>
       <FormGrid item xs={12} md={6}>
         <FormLabel htmlFor="first-name" required>
           First name
@@ -23,8 +51,8 @@ export default function AddressForm() {
           id="first-name"
           name="first-name"
           type="name"
-          placeholder="John"
-          autoComplete="first name"
+          placeholder={user.firstName}
+          autoComplete={user.firstName}
           required
         />
       </FormGrid>
@@ -36,8 +64,8 @@ export default function AddressForm() {
           id="last-name"
           name="last-name"
           type="last-name"
-          placeholder="Snow"
-          autoComplete="last name"
+          placeholder={user.lastName}
+          autoComplete={user.lastName}
           required
         />
       </FormGrid>
@@ -73,7 +101,7 @@ export default function AddressForm() {
           id="city"
           name="city"
           type="city"
-          placeholder="New York"
+          placeholder="Mumbai"
           autoComplete="City"
           required
         />
@@ -86,7 +114,7 @@ export default function AddressForm() {
           id="state"
           name="state"
           type="state"
-          placeholder="NY"
+          placeholder="Maharashtra"
           autoComplete="State"
           required
         />
@@ -112,7 +140,7 @@ export default function AddressForm() {
           id="country"
           name="country"
           type="country"
-          placeholder="United States"
+          placeholder="India"
           autoComplete="shipping country"
           required
         />
@@ -124,5 +152,9 @@ export default function AddressForm() {
         />
       </FormGrid>
     </Grid>
+      <button type="submit">Add address</button>
+    </form>
   );
-}
+};
+
+export default AddressForm;

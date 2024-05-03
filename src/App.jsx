@@ -13,7 +13,10 @@ import Cart from './components/Cart/Cart';
 import Wishlist from './components/WishList/Wishlist';
 import Header from './utils/Header/Header';
 import ImagePrompt from './utils/ImagePrompt/ImagePrompt';
+import PlaceOrder from './utils/PlaceOrder';
+import Verify from './utils/Verify';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import MyOrders from './utils/MyOrders';
 
 const queryClient = new QueryClient();
 
@@ -37,6 +40,9 @@ function App() {
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/About" element={<About />} />
                     <Route path="/plant-nutrition" element={<Plant_Nutrition />} />
+                    <Route path="/cart/order" element={<PlaceOrder />} />
+                    <Route path="/verify" element={<Verify />} />
+                    <Route path="/myorders" element={<MyOrders />} />
                 </Routes>
             </main>
         </QueryClientProvider>

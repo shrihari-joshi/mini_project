@@ -49,8 +49,10 @@ const Header = () => {
                                 <LogoutIcon className='search' title='Logout' onClick={() => setShowDropdown(!showDropdown)} />
                                 {showDropdown && (
                                     <div className="dropdown-content">
+                                        <Link to={'myorders'}>
+                                            <button>My Orders</button>
+                                        </Link>
                                         <button onClick={handleLogout}>Logout</button>
-                                        <button>My Orders</button>
                                     </div>
                                 )}
                             </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './Payment/Checkout.js'
@@ -7,6 +8,7 @@ import Loading from '../../utils/Loading.jsx'
 import FertilizerItem from "./FertilizerItem.jsx";
 import SeedItem from "./SeedItem.jsx";
 import PesticideItem from "./PesicideItem.jsx";
+import PlaceOrder from "../../utils/PlaceOrder.jsx";
 // import './cart.css'
 
 const Cart = () => {
@@ -125,6 +127,17 @@ const Cart = () => {
                     <h2>Total Price : ₹ {cartTotal}</h2>
                     <button className='clearCart' onClick={() => clearCart()}>Clear Cart</button>
                     <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
+
+                    {cartTotal !== 0 ? (
+                        <Link to={'order'}>
+                        <button type="submit">
+                            Proceed to payment
+                        </button>              
+                    </Link>
+                    ) : (
+                        <button className="disabled" disabled>Proceed To Payment</button>
+                    )}
+
                 </>
             )}
         </div>
