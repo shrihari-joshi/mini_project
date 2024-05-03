@@ -40,12 +40,24 @@ const WeatherForecast = () => {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState('');
     const [error, setError] = useState('');
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('currentUser'));
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        if (!seedName || !date) {
+            setError('Please enter both the seed name and date.');
+            return;
+        }
+
+        const selectedDate = new Date(date);
+        const currentDate = new Date();
+        if (selectedDate > currentDate) {
+            setError('To proceed, please select a date that has already passed');
+            return;
+        }
+
         setLoading(true);
         setError('');
 
@@ -84,7 +96,7 @@ const WeatherForecast = () => {
                                         value={seedName}
                                         onChange={(e) => setSeedName(e.target.value)}
                                         className="input" 
-                                        />
+                                    />
                                 </div>
 
                                 <div className="input-group"> 
@@ -95,7 +107,7 @@ const WeatherForecast = () => {
                                         value={date}
                                         onChange={(e) => setDate(e.target.value)}
                                         className="input" 
-                                        />
+                                    />
                                 </div>
 
                                 <div className="input-group"> 
@@ -105,15 +117,14 @@ const WeatherForecast = () => {
                                         value={soilType}
                                         onChange={(e) => setSoilType(e.target.value)}
                                         className="input" 
-                                        >
+                                    >
                                         <option value="">Select Soil Type</option>
-                                        <option value="Alluvial" onfocus='this.size=10;' onblur='this.size=0;' onchange='this.size=1; this.blur();'>Alluvial</option>
+                                        <option value="Alluvial">Alluvial</option>
                                         <option value="Black">Black</option>
                                         <option value="Red and Yellow">Red and Yellow</option>
                                         <option value="Laterite">Laterite</option>
                                         <option value="Arid">Arid</option>
                                         <option value="Forest and Mountain">Forest and Mountain</option>
-                                        
                                         {/* Add more options as needed */}
                                     </select>
                                     {/* <p className="subtext">Get the solution for another soil type other than {user.soilType}</p>  */}
@@ -121,7 +132,9 @@ const WeatherForecast = () => {
 
                             </div>
                             <div>
-                                <button type="submit" className="buttonsol">Generate Solution</button> 
+                                <button type="submit" className="buttonsol" disabled={loading}>
+                                    Generate Solution
+                                </button> 
                             </div>
                         </div>
                         </form>

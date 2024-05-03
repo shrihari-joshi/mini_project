@@ -50,6 +50,7 @@ const Header = () => {
                                 {showDropdown && (
                                     <div className="dropdown-content">
                                         <button onClick={handleLogout}>Logout</button>
+                                        <button>My Orders</button>
                                     </div>
                                 )}
                             </div>

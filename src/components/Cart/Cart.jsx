@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './Payment/Checkout.js'
@@ -20,10 +19,7 @@ const Cart = () => {
     const notifyError = (msg) => toast.error(msg, { position: 'top-center' });
     const notifyWarning = (msg) => toast.warn(msg, { position: 'top-center'})
     const notifySuccess = (msg) => toast.success(msg, { position: 'top-center' });
-    // const navigate = useNavigate()
-    // if (!user) {
-    //     navigate('/signup')
-    // }
+
 
     const fetchCart = async () => {
         try {
@@ -32,7 +28,6 @@ const Cart = () => {
                 console.error('User data not found in localStorage');
                 return;
             }
-            setIsLoading(true)
             const response = await axios.get('http://localhost:3500/getCart', {
                 params: {
                     username: user.username

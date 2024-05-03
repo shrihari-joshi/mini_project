@@ -82,7 +82,7 @@ const Wishlist = () => {
             <h1>Wishlist</h1>
             {user ? (
                 isLoading ? (
-                    <p><Loading/></p>
+                    <p style={{ display : "flex" , justifyContent : "center", alignItems : "center"}}><Loading/></p>
                 ) : wishlist.length > 0 ? (
                     <ul className="item-container">
                         {wishlist.map((wishListItem, index) => (
