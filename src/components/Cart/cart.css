@@ -68,7 +68,7 @@ h2{
 .removeBtn:hover{
     background-color: #1b2510;
 }
-.clearCart{
+.main button{
     padding: 0.625rem 3rem; 
     border: none;
     border-radius: 0.4rem; 
@@ -82,7 +82,7 @@ h2{
     margin: 20px auto;
     display: block;
 }
-.clearCart:hover{
+.main button:hover{
     background-color: #283618;
     color: #eff6e0;
     text-align: center;

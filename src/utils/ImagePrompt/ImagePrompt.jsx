@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './imagePrompt.css';
 
 const ImagePrompt = () => {
     const [selectedFile, setSelectedFile] = useState(null);

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './placeOrder.css';
 
 const PlaceOrder = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -96,7 +97,7 @@ const PlaceOrder = () => {
     return (
         <div>
             <h1>Place Your Order</h1>
-            <div>
+            <div className='contain'>
                 <form onSubmit={placeOrderHandler}>
                     <label htmlFor="address_line1">Address Line 1:</label>
                     <input
@@ -156,20 +157,22 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         required
                     />
+                    
 
                     <button style={{ display : 'flex', justifyContent : 'center', alignItems : 'center'}} type="submit">Place Order</button>
                 </form>
-            </div>
-            <div>
+                <div className='summary'>
                 {cartItems && cartTotal && (
                     <div>
                         {cartItems.map((item, index) => (
-                            <li key={index}>{item.name} ({item.quantity}) : {item.price * item.quantity}</li>
+                            <li key={index}>{item.name} ({item.quantity}) : ₹{item.price * item.quantity}</li>
                         ))}
-                        <h3>Cart Total: {cartTotal}</h3>
+                        <h3>Cart Total: ₹{cartTotal}</h3>
                     </div>
                 )}
             </div>
+            </div>
+            
 
             <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
 

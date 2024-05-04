@@ -5,13 +5,16 @@
     color: #283618;
     font-family: "Poppins", sans-serif;
 }
+.heading{
+    text-align: center;
+}
 .App{
     padding-top: 1rem;
 }
 .home-heading1{
     display: inline;
     /* padding-top: 8.5rem; */
-    padding-left: 10rem;
+    /* padding-left: 10rem; */
     font-size: 2rem;
     
 }

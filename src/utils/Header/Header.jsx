@@ -57,14 +57,14 @@ const Header = () => {
                                 <LogoutIcon className='dropdown-logout-logo' title='Logout' />
                                 {showDropdown && (
                                     <div className="dropdown-content">
-<<<<<<< HEAD
+{/* HEAD */}
                                         <Link to={'myorders'}>
-                                            <button>My Orders</button>
+                                            <button className='something'>My Orders</button>
                                         </Link>
-                                        <button onClick={handleLogout}>Logout</button>
-=======
+                                        <button onClick={handleLogout} className='something'>Logout</button>
+
                                         <button className='dropdown-button' onClick={handleLogout}>Logout</button>
->>>>>>> 0f337b19af4adc9a3d52ccb4d2d64720f8596650
+{/* 0f337b19af4adc9a3d52ccb4d2d64720f8596650 */}
                                     </div>
                                 )}
                             </div>

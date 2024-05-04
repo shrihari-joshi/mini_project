@@ -128,9 +128,9 @@ const Cart = () => {
                     <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
 
                     {cartTotal !== 0 ? (
-                        <Link to={'order'}>
+                        <Link style={{textDecoration: 'none'}} to={'order'}>
                         <button type="submit">
-                            Proceed to payment
+                            Proceed to Payment
                         </button>              
                     </Link>
                     ) : (

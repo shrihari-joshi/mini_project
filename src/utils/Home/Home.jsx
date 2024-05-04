@@ -26,7 +26,7 @@ const Home = () => {
     return (
        
             <div className="App">
-                <div>
+                <div className='heading'>
                     <p className='home-heading1'>Welcome to</p>
                     <p className='home-heading2'>Kisaan Care</p>
 

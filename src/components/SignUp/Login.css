@@ -9,7 +9,9 @@
 .input2::placeholder{
     font-size: 1.1rem;
   }
-
+.loggedin{
+  width: unset;
+}
 .login_page{
     background-color: #eff6e0;
     height: 40vh;
